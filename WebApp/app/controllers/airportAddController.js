@@ -9,7 +9,7 @@ app.controller('airportAddController', ['$scope', '$location', 'airportService',
         IATA: null,
         ICAO: null,
         CityId: null,
-        isInt: false,
+        IsInt: false,
     };
 
     $scope.clearEntity = function () {
@@ -18,7 +18,7 @@ app.controller('airportAddController', ['$scope', '$location', 'airportService',
         $scope.entity.IATA = null;
         $scope.entity.ICAO = null;
         $scope.entity.CityId = null;
-        $scope.entity.isInt = false;
+        $scope.entity.IsInt = false;
     };
 
     $scope.bind = function (data) {
@@ -27,7 +27,7 @@ app.controller('airportAddController', ['$scope', '$location', 'airportService',
         $scope.entity.IATA = data.IATA;
         $scope.entity.ICAO = data.ICAO;
         $scope.entity.CityId = data.CityId;
-        $scope.entity.isInt = data.isInt;
+        $scope.entity.IsInt = data.IsInt;
     };
 
 
@@ -96,7 +96,7 @@ app.controller('airportAddController', ['$scope', '$location', 'airportService',
     {
         text: '',
         bindingOptions: {
-            value: 'entity.isInt',
+            value: 'entity.IsInt',
         }
     };
     /////////////////////////////////

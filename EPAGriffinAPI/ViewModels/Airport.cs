@@ -15,7 +15,7 @@ namespace EPAGriffinAPI.ViewModels
         public string ICAO { get; set; }
         [Required(ErrorMessage = "City is required")]
         public int CityId { get; set; }
-        public bool? isInt { get; set; }
+        public bool? IsInt { get; set; }
         // public string ImportId { get; set; }
         // public string Type { get; set; }
         public static void Fill(Models.Airport entity, ViewModels.Airport airport)
@@ -25,7 +25,7 @@ namespace EPAGriffinAPI.ViewModels
             entity.IATA = airport.IATA;
             entity.ICAO = airport.ICAO;
             entity.CityId = airport.CityId;
-            entity.IsInt = airport.isInt;
+            entity.IsInt = airport.IsInt;
             //entity.ImportId = airport.ImportId;
             //entity.Type = airport.Type;
         }

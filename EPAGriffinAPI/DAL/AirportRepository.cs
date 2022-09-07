@@ -39,6 +39,7 @@ namespace EPAGriffinAPI.DAL
 
         public virtual CustomActionResult CanDelete(Models.Airport entity)
         {
+
             return new CustomActionResult(HttpStatusCode.OK, "");
         }
 

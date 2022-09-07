@@ -112,6 +112,8 @@ namespace EPAGriffinAPI.Controllers
         [AcceptVerbs("POST")]
         public async Task<IHttpActionResult> DeleteAirport(ViewModels.Airport dto)
         {
+
+
             var entity = await unitOfWork.AirportRepository.GetByID(dto.Id);
              
             if (entity == null)
@@ -121,9 +123,16 @@ namespace EPAGriffinAPI.Controllers
 
 
 
-            var canDelete =unitOfWork.AirportRepository.CanDelete(entity);
-            if (canDelete.Code != HttpStatusCode.OK)
-                return canDelete;
+            //var canDelete =unitOfWork.AirportRepository.CanDelete(entity);
+            //if (canDelete.Code != HttpStatusCode.OK)
+            //    return canDelete;
+            var query = from x in unitOfWork.FlightRepository.GetFlights()
+                        where x.FromAirportId == dto.Id || x.ToAirportId == dto.Id
+                        select x;
+            var cnt = query.Count();
+
+            if (cnt > 0)
+                return NotFound();
 
             unitOfWork.AirportRepository.Delete(entity);
 
