@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptMovaledYear));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode1 = new DevExpress.DataAccess.Json.JsonSchemaNode("root", true, DevExpress.DataAccess.Json.JsonNodeType.Array);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode2 = new DevExpress.DataAccess.Json.JsonSchemaNode("Year", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode3 = new DevExpress.DataAccess.Json.JsonSchemaNode("Legs", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
@@ -79,17 +80,7 @@
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode48 = new DevExpress.DataAccess.Json.JsonSchemaNode("TotalToneDistanceAvailableInt", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode49 = new DevExpress.DataAccess.Json.JsonSchemaNode("WeightLoadFactorInt", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode50 = new DevExpress.DataAccess.Json.JsonSchemaNode("DistanceInt", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<double>));
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptMovaledYear));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
-            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.jsonDataSource1 = new DevExpress.DataAccess.Json.JsonDataSource(this.components);
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.lblYear = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -161,7 +152,16 @@
             this.xrTableCell41 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell56 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell42 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.lblYear = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.jsonDataSource1 = new DevExpress.DataAccess.Json.JsonDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -173,141 +173,6 @@
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // TopMargin
-            // 
-            this.TopMargin.HeightF = 88F;
-            this.TopMargin.Name = "TopMargin";
-            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // BottomMargin
-            // 
-            this.BottomMargin.HeightF = 1F;
-            this.BottomMargin.Name = "BottomMargin";
-            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // PageHeader
-            // 
-            this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPictureBox1,
-            this.lblYear,
-            this.xrLabel6,
-            this.xrLabel1});
-            this.PageHeader.HeightF = 133.5F;
-            this.PageHeader.Name = "PageHeader";
-            // 
-            // PageFooter
-            // 
-            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel8});
-            this.PageFooter.HeightF = 54.16667F;
-            this.PageFooter.Name = "PageFooter";
-            // 
-            // jsonDataSource1
-            // 
-            this.jsonDataSource1.ConnectionName = "JsonConnection_formayear";
-            this.jsonDataSource1.Name = "jsonDataSource1";
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode2);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode3);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode4);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode5);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode6);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode7);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode8);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode9);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode10);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode11);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode12);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode13);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode14);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode15);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode16);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode17);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode18);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode19);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode20);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode21);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode22);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode23);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode24);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode25);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode26);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode27);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode28);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode29);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode30);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode31);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode32);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode33);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode34);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode35);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode36);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode37);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode38);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode39);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode40);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode41);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode42);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode43);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode44);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode45);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode46);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode47);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode48);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode49);
-            jsonSchemaNode1.Nodes.Add(jsonSchemaNode50);
-            this.jsonDataSource1.Schema = jsonSchemaNode1;
-            // 
-            // xrPictureBox1
-            // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(548F, 10F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(92F, 79F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-            // 
-            // lblYear
-            // 
-            this.lblYear.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Year]")});
-            this.lblYear.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.lblYear.LocationFloat = new DevExpress.Utils.PointFloat(454.36F, 58F);
-            this.lblYear.Multiline = true;
-            this.lblYear.Name = "lblYear";
-            this.lblYear.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblYear.SizeF = new System.Drawing.SizeF(45.83328F, 23F);
-            this.lblYear.StylePriority.UseFont = false;
-            this.lblYear.StylePriority.UseTextAlignment = false;
-            this.lblYear.Text = "2020";
-            this.lblYear.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.Font = new System.Drawing.Font("B Nazanin", 12F);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(500.1919F, 55.50018F);
-            this.xrLabel6.Multiline = true;
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(37.49997F, 23F);
-            this.xrLabel6.StylePriority.UseFont = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "سال";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Font = new System.Drawing.Font("B Nazanin", 13F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(56.02519F, 21.66667F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(481.6666F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "گزارش اطلاعات و آمار پروازهای مولد هواپیمایی کاسپین";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // xrTable1
             // 
@@ -1138,6 +1003,86 @@
             this.xrTableCell42.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             this.xrTableCell42.Weight = 1.8461539021328408D;
             // 
+            // TopMargin
+            // 
+            this.TopMargin.HeightF = 88F;
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.HeightF = 1F;
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // PageHeader
+            // 
+            this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrPictureBox1,
+            this.lblYear,
+            this.xrLabel6,
+            this.xrLabel1});
+            this.PageHeader.HeightF = 133.5F;
+            this.PageHeader.Name = "PageHeader";
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(548F, 10F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(92F, 79F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
+            // lblYear
+            // 
+            this.lblYear.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Year]")});
+            this.lblYear.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.lblYear.LocationFloat = new DevExpress.Utils.PointFloat(454.36F, 58F);
+            this.lblYear.Multiline = true;
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblYear.SizeF = new System.Drawing.SizeF(45.83328F, 23F);
+            this.lblYear.StylePriority.UseFont = false;
+            this.lblYear.StylePriority.UseTextAlignment = false;
+            this.lblYear.Text = "2020";
+            this.lblYear.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel6
+            // 
+            this.xrLabel6.Font = new System.Drawing.Font("B Nazanin", 12F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(500.1919F, 55.50018F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(37.49997F, 23F);
+            this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "سال";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("B Nazanin", 13F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(56.02519F, 21.66667F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(481.6666F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "گزارش اطلاعات و آمار پروازهای مولد هواپیمایی کیش ایر";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // PageFooter
+            // 
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel8});
+            this.PageFooter.HeightF = 54.16667F;
+            this.PageFooter.Name = "PageFooter";
+            // 
             // xrLabel8
             // 
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(0F, 5F);
@@ -1148,6 +1093,61 @@
             this.xrLabel8.StylePriority.UseTextAlignment = false;
             this.xrLabel8.Text = "Generated by AIRPOCKET";
             this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // jsonDataSource1
+            // 
+            this.jsonDataSource1.ConnectionName = "JsonConnection_formayear";
+            this.jsonDataSource1.Name = "jsonDataSource1";
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode2);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode3);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode4);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode5);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode6);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode7);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode8);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode9);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode10);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode11);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode12);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode13);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode14);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode15);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode16);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode17);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode18);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode19);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode20);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode21);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode22);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode23);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode24);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode25);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode26);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode27);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode28);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode29);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode30);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode31);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode32);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode33);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode34);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode35);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode36);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode37);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode38);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode39);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode40);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode41);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode42);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode43);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode44);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode45);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode46);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode47);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode48);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode49);
+            jsonSchemaNode1.Nodes.Add(jsonSchemaNode50);
+            this.jsonDataSource1.Schema = jsonSchemaNode1;
             // 
             // rptMovaledYear
             // 

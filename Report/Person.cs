@@ -137,5 +137,26 @@ namespace Report
         public Nullable<System.DateTime> RecurrentExpireDate { get; set; }
         public Nullable<System.DateTime> FMTIssueDate { get; set; }
         public Nullable<System.DateTime> FMTExpireDate { get; set; }
+        public string PFirstName { get; set; }
+        public string PLastName { get; set; }
+        public string MultiType { get; set; }
+        public Nullable<bool> OtherAirline { get; set; }
+        public Nullable<System.DateTime> TypeMDIssueDate { get; set; }
+        public Nullable<System.DateTime> TypeMDExpireDate { get; set; }
+        public Nullable<System.DateTime> Type737IssueDate { get; set; }
+        public Nullable<System.DateTime> Type737ExpireDate { get; set; }
+        public Nullable<System.DateTime> TypeAirbusIssueDate { get; set; }
+        public Nullable<System.DateTime> TypeAirbusExpireDate { get; set; }
+        public Nullable<System.DateTime> TypeMDConversionIssueDate { get; set; }
+        public Nullable<System.DateTime> Type737ConversionIssueDate { get; set; }
+        public Nullable<System.DateTime> TypeAirbusConversionIssueDate { get; set; }
+        public Nullable<System.DateTime> LRCIssueDate { get; set; }
+        public Nullable<System.DateTime> LRCExpireDate { get; set; }
+        public Nullable<System.DateTime> RSPIssueDate { get; set; }
+        public Nullable<System.DateTime> RSPExpireDate { get; set; }
+        public Nullable<System.DateTime> CTUIssueDate { get; set; }
+        public Nullable<System.DateTime> CTUExpireDate { get; set; }
+        public Nullable<System.DateTime> SAIssueDate { get; set; }
+        public Nullable<System.DateTime> SAExpireDate { get; set; }
     }
 }

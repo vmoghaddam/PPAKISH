@@ -215,6 +215,14 @@ namespace EPAGriffinAPI.DAL
         {
             return this.GetQuery<ViewFinMonthlyRoute>();
         }
+        public IQueryable<ViewFormB> GetViewFormB()
+        {
+            return this.GetQuery<ViewFormB>();
+        }
+        public IQueryable<ViewFormC> GetViewFormC()
+        {
+            return this.GetQuery<ViewFormC>();
+        }
         public IQueryable<ViewFinYearlyRoute> GetViewFinYearlyRoute()
         {
             return this.GetQuery<ViewFinYearlyRoute>();

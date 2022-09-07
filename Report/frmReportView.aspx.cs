@@ -1,4 +1,5 @@
 ﻿using DevExpress.DataAccess.Json;
+using DevExpress.XtraPrinting.Caching;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,7 +15,13 @@ namespace Report
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-    
+
+
+            string _expUrl = "";
+            try
+            {
+
+           
 
             string apiUrl = WebConfigurationManager.AppSettings["api_url"];
             string apiUrlv2 = WebConfigurationManager.AppSettings["api_urlv2"];
@@ -27,6 +34,9 @@ namespace Report
             JsonDataSource dataSource = null;
             switch (type)
             {
+                case "1000":
+                    ASPxWebDocumentViewer1.OpenReport(new rptLogA());
+                    break;
                 case "100":
                     string coid = Request.QueryString["cid"];
                     var reportAtt = new rptAtt(coid);
@@ -81,7 +91,7 @@ namespace Report
                     string region = Request.QueryString["region"];
                     var rptcp = new rptCityPair(yearcp,monthcp,region);
                     dataSource = new JsonDataSource();
-                    var cpurl = apiUrlv2 + "odata/citypair/report?year=" + yearcp + "&month=" + monthcp+"&dom="+(region=="DOM"?1:0);
+                    var cpurl = /*apiUrlv2*/apiUrl + "odata/citypair/report?year=" + yearcp + "&month=" + monthcp+"&dom="+(region=="DOM"?1:0);
                     dataSource.JsonSource = new UriJsonSource(new Uri(cpurl));
                     dataSource.Fill();
                     rptcp.DataSource = dataSource;
@@ -93,7 +103,7 @@ namespace Report
                      
                     var rptroster = new rptRoster(rosterDate,rosterRev);
                     dataSource = new JsonDataSource();
-                    var rosterurl = "https://fleet.flypersia.aero/expapi/"+"api/roster/report/date/?df="+rosterDate+"&revision="+rosterRev;
+                    var rosterurl = /*"https://fleet.flypersia.aero/expapi/"*/"https://api.apchabahar.ir/" + "api/roster/report/date/?df="+rosterDate+"&revision="+rosterRev;
                     dataSource.JsonSource = new UriJsonSource(new Uri(rosterurl));
                     dataSource.Fill();
                     rptroster.DataSource = dataSource;
@@ -123,17 +133,38 @@ namespace Report
                     rptasr.DataSource = dataSource;
                     ASPxWebDocumentViewer1.OpenReport(rptasr);
                     break;
+                //case "18":
+                //    string cerId = Request.QueryString["id"];
+
+
+                //    var rptfpc = new rptFPC();
+                //    dataSource = new JsonDataSource();
+                //    var rptfpcurl = apiUrlExtTemp + "/api/certificate/"+cerId ;//apiUrlExtTemp + " / api/asr/flight/view/" + asrFlightId;
+                //    dataSource.JsonSource = new UriJsonSource(new Uri(rptfpcurl));
+                //    dataSource.Fill();
+
+                //    rptfpc.DataSource = dataSource;
+                //    ASPxWebDocumentViewer1.OpenReport(rptfpc);
+                //    break;
+
+
+                    //pasco
                 case "18":
                     string cerId = Request.QueryString["id"];
 
 
-                    var rptfpc = new rptFPC();
+                    var rptfpc = new rptFPCPasco();
                     dataSource = new JsonDataSource();
-                    var rptfpcurl = apiUrlExtTemp + "/api/certificate/"+cerId ;//apiUrlExtTemp + " / api/asr/flight/view/" + asrFlightId;
+                    var rptfpcurl = /*apiUrlExtTemp*/"https://trn.apoc.ir" + "/api/certificate/" + cerId;//apiUrlExtTemp + " / api/asr/flight/view/" + asrFlightId;
                     dataSource.JsonSource = new UriJsonSource(new Uri(rptfpcurl));
                     dataSource.Fill();
 
                     rptfpc.DataSource = dataSource;
+
+                   // var cachedReportSource = new CachedReportSource(rptfpc, new MemoryDocumentStorage());
+                   // ASPxWebDocumentViewer1.DocumentSource = cachedReportSource;
+                   // cachedReportSource.CreateDocumentAsync();
+
                     ASPxWebDocumentViewer1.OpenReport(rptfpc);
                     break;
                 case "8":
@@ -279,60 +310,92 @@ namespace Report
                     ASPxWebDocumentViewer1.OpenReport(rptfp);
                     break;
 
+
+
+                case "b":
+                    string yearfb = Request.QueryString["year"];
+                    string qrtfb = Request.QueryString["qrt"];
+                  
+                    var rptfb = new rptFormB();
+                    dataSource = new JsonDataSource();
+                    var fburl = apiUrl + "odata/formb/report?year="+yearfb+"&qrt="+qrtfb  ;
+                        _expUrl = fburl;
+                    dataSource.JsonSource = new UriJsonSource(new Uri(fburl));
+                    dataSource.Fill();
+                    rptfb.DataSource = dataSource;
+                    ASPxWebDocumentViewer1.OpenReport(rptfb);
+                    break;
+                case "c":
+                    string yearfc = Request.QueryString["year"];
+                    string monthfc = Request.QueryString["month"];
+
+                    var rptfc = new rptFormC();
+                    dataSource = new JsonDataSource();
+                    var fcurl = apiUrl  + "odata/formc/report?year=" + yearfc + "&month=" + monthfc;
+                    dataSource.JsonSource = new UriJsonSource(new Uri(fcurl));
+                    dataSource.Fill();
+                    rptfc.DataSource = dataSource;
+                    ASPxWebDocumentViewer1.OpenReport(rptfc);
+                    break;
+
                 default:break;
             }
 
-            ////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////
 
-            //string df = Request.QueryString["df"];
-            //string dt = Request.QueryString["dt"];
+                //string df = Request.QueryString["df"];
+                //string dt = Request.QueryString["dt"];
 
-            //string type = Request.QueryString["type"];
-            //if (string.IsNullOrEmpty(type))
-            //    type = "1";
-
-
-            //string airlineId = Request.QueryString["airline"];
-            //if (string.IsNullOrEmpty(airlineId))
-            //    airlineId = "-1";
-            //string flightStatusId = Request.QueryString["status"];
-            //if (string.IsNullOrEmpty(flightStatusId))
-            //    flightStatusId = "-1";
-            //string from = Request.QueryString["from"];
-            //if (string.IsNullOrEmpty(from))
-            //    from = "-1";
-            //string to = Request.QueryString["to"];
-            //if (string.IsNullOrEmpty(to))
-            //    to = "-1";
-            //string employeeId = Request.QueryString["id"];
-
-            //JsonDataSource dataSource = null;
-
-            //switch (type)
-            //{
-
-            //    case "1":
-            //        var rptFlight = new RptFlight(df,dt);
-            //        dataSource = new JsonDataSource();
-            //        dataSource.JsonSource = new UriJsonSource(new Uri(apiUrl + "odata/crew/flights/app2/?id=" + employeeId + "&df=" + df + "&dt=" + dt + "&status=" + flightStatusId + "&airline=" + airlineId + "&report=" + type + "&from=" + from + "&to=" + to));
-            //        dataSource.Fill();
-            //        rptFlight.DataSource = dataSource;
-            //        ASPxWebDocumentViewer1.OpenReport(rptFlight);
-            //        break;
-            //    case "easafcl16":
-            //        var rptEASAFCL16 = new RptFlight();
-            //        dataSource = new JsonDataSource();
-            //        dataSource.JsonSource = new UriJsonSource(new Uri(apiUrl + "odata/crew/flights/app2/?id=" + employeeId + "&df=" + df + "&dt=" + dt + "&status=" + flightStatusId + "&airline=" + airlineId + "&report=" + type+"&from="+from+"&to="+to));
-            //        dataSource.Fill();
-            //        rptEASAFCL16.DataSource = dataSource;
-            //        ASPxWebDocumentViewer1.OpenReport(rptEASAFCL16);
-            //        break;
-            //    default:
-            //        break;
-
-            //}
+                //string type = Request.QueryString["type"];
+                //if (string.IsNullOrEmpty(type))
+                //    type = "1";
 
 
+                //string airlineId = Request.QueryString["airline"];
+                //if (string.IsNullOrEmpty(airlineId))
+                //    airlineId = "-1";
+                //string flightStatusId = Request.QueryString["status"];
+                //if (string.IsNullOrEmpty(flightStatusId))
+                //    flightStatusId = "-1";
+                //string from = Request.QueryString["from"];
+                //if (string.IsNullOrEmpty(from))
+                //    from = "-1";
+                //string to = Request.QueryString["to"];
+                //if (string.IsNullOrEmpty(to))
+                //    to = "-1";
+                //string employeeId = Request.QueryString["id"];
+
+                //JsonDataSource dataSource = null;
+
+                //switch (type)
+                //{
+
+                //    case "1":
+                //        var rptFlight = new RptFlight(df,dt);
+                //        dataSource = new JsonDataSource();
+                //        dataSource.JsonSource = new UriJsonSource(new Uri(apiUrl + "odata/crew/flights/app2/?id=" + employeeId + "&df=" + df + "&dt=" + dt + "&status=" + flightStatusId + "&airline=" + airlineId + "&report=" + type + "&from=" + from + "&to=" + to));
+                //        dataSource.Fill();
+                //        rptFlight.DataSource = dataSource;
+                //        ASPxWebDocumentViewer1.OpenReport(rptFlight);
+                //        break;
+                //    case "easafcl16":
+                //        var rptEASAFCL16 = new RptFlight();
+                //        dataSource = new JsonDataSource();
+                //        dataSource.JsonSource = new UriJsonSource(new Uri(apiUrl + "odata/crew/flights/app2/?id=" + employeeId + "&df=" + df + "&dt=" + dt + "&status=" + flightStatusId + "&airline=" + airlineId + "&report=" + type+"&from="+from+"&to="+to));
+                //        dataSource.Fill();
+                //        rptEASAFCL16.DataSource = dataSource;
+                //        ASPxWebDocumentViewer1.OpenReport(rptEASAFCL16);
+                //        break;
+                //    default:
+                //        break;
+
+                //}
+
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(_expUrl);
+            }
 
         }
     }

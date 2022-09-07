@@ -68,5 +68,16 @@ namespace Report
         public Nullable<int> Mandatory { get; set; }
         public string ImgUrl { get; set; }
         public string EmployeeLocation { get; set; }
+        public string JobGroupCode2 { get; set; }
+        public string SMSStatus { get; set; }
+        public Nullable<System.DateTime> SMSDateSent { get; set; }
+        public Nullable<long> SMSRefId { get; set; }
+        public string SMSMsg { get; set; }
+        public string Instructor1 { get; set; }
+        public string Instructor2 { get; set; }
+        public Nullable<int> Instructor2Id { get; set; }
+        public Nullable<int> Instructor1Id { get; set; }
+        public Nullable<bool> Continual { get; set; }
+        public Nullable<bool> InActive { get; set; }
     }
 }

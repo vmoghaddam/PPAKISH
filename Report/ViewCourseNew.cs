@@ -61,5 +61,12 @@ namespace Report
         public Nullable<int> Instructor2EmployeeId { get; set; }
         public string Instructor2JobGroup { get; set; }
         public string Instructor2 { get; set; }
+        public Nullable<decimal> Cost { get; set; }
+        public string SMSIns1 { get; set; }
+        public string SMSIns2 { get; set; }
+        public string SMSIns1Status { get; set; }
+        public string SMSIns2Status { get; set; }
+        public Nullable<System.DateTime> SMSInsDate { get; set; }
+        public string AttForm { get; set; }
     }
 }

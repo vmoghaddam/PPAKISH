@@ -442,6 +442,8 @@ namespace EPAGriffinAPI.Models
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<FlightRoute> FlightRoutes { get; set; }
         public virtual DbSet<HelperPerson> HelperPersons { get; set; }
+        public virtual DbSet<ViewFormB> ViewFormBs { get; set; }
+        public virtual DbSet<ViewFormC> ViewFormCs { get; set; }
     
         public virtual int GetOverDuty(string aDate, Nullable<int> aDuty, Nullable<int> aFlight, Nullable<int> aPID)
         {

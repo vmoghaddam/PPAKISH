@@ -30,5 +30,6 @@ namespace Report
         public virtual DbSet<ViewCoursePeople> ViewCoursePeoples { get; set; }
         public virtual DbSet<ViewCourseSessionPresence> ViewCourseSessionPresences { get; set; }
         public virtual DbSet<ViewCourseNew> ViewCourseNews { get; set; }
+        public virtual DbSet<ViewLogBook18> ViewLogBook18 { get; set; }
     }
 }

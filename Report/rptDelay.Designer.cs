@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptDelay));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode1 = new DevExpress.DataAccess.Json.JsonSchemaNode("root", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode2 = new DevExpress.DataAccess.Json.JsonSchemaNode("delayedFlights", true);
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode3 = new DevExpress.DataAccess.Json.JsonSchemaNode("OnTime", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(System.Nullable<long>));
@@ -92,8 +93,8 @@
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode61 = new DevExpress.DataAccess.Json.JsonSchemaNode("PaxDiff", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(object));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode62 = new DevExpress.DataAccess.Json.JsonSchemaNode("FreightDiff", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(object));
             DevExpress.DataAccess.Json.JsonSchemaNode jsonSchemaNode63 = new DevExpress.DataAccess.Json.JsonSchemaNode("LFDiff", true, DevExpress.DataAccess.Json.JsonNodeType.Property, typeof(object));
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptDelay));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.xrPictureBoxFly = new DevExpress.XtraReports.UI.XRPictureBox();
             this.lbldt = new DevExpress.XtraReports.UI.XRLabel();
             this.lbldf = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
@@ -181,7 +182,6 @@
             this.xrTableCell61 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell66 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.xrPictureBoxFly = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -198,6 +198,15 @@
             this.xrPictureBoxCaspian});
             this.TopMargin.HeightF = 121.6666F;
             this.TopMargin.Name = "TopMargin";
+            // 
+            // xrPictureBoxFly
+            // 
+            this.xrPictureBoxFly.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBoxFly.ImageSource"));
+            this.xrPictureBoxFly.LocationFloat = new DevExpress.Utils.PointFloat(953F, 45F);
+            this.xrPictureBoxFly.Name = "xrPictureBoxFly";
+            this.xrPictureBoxFly.SizeF = new System.Drawing.SizeF(91.99976F, 52.00002F);
+            this.xrPictureBoxFly.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            this.xrPictureBoxFly.Visible = false;
             // 
             // lbldt
             // 
@@ -609,6 +618,8 @@
             // 
             // xrTableCell23
             // 
+            this.xrTableCell23.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flightPast].[LF]")});
             this.xrTableCell23.Multiline = true;
             this.xrTableCell23.Name = "xrTableCell23";
             this.xrTableCell23.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
@@ -619,6 +630,8 @@
             // 
             // xrTableCell50
             // 
+            this.xrTableCell50.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flightPast].[LFDiff]")});
             this.xrTableCell50.Multiline = true;
             this.xrTableCell50.Name = "xrTableCell50";
             this.xrTableCell50.StylePriority.UseTextAlignment = false;
@@ -786,6 +799,8 @@
             // 
             // xrTableCell11
             // 
+            this.xrTableCell11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flightPast].[Total]")});
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
@@ -796,6 +811,8 @@
             // 
             // xrTableCell46
             // 
+            this.xrTableCell46.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flightPast].[TotalDiff]")});
             this.xrTableCell46.Multiline = true;
             this.xrTableCell46.Name = "xrTableCell46";
             this.xrTableCell46.StylePriority.UseTextAlignment = false;
@@ -829,7 +846,7 @@
             // xrTableCell8
             // 
             this.xrTableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flight].[Total]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flight].[SeatsDiff]")});
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.No;
@@ -841,7 +858,7 @@
             // xrTableCell45
             // 
             this.xrTableCell45.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flight].[TotalDiff]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[flightPast].[SeatsDiff]")});
             this.xrTableCell45.Multiline = true;
             this.xrTableCell45.Name = "xrTableCell45";
             this.xrTableCell45.StylePriority.UseTextAlignment = false;
@@ -1223,15 +1240,6 @@
             this.xrLabel1});
             this.ReportFooter.HeightF = 175.8333F;
             this.ReportFooter.Name = "ReportFooter";
-            // 
-            // xrPictureBoxFly
-            // 
-            this.xrPictureBoxFly.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBoxFly.ImageSource"));
-            this.xrPictureBoxFly.LocationFloat = new DevExpress.Utils.PointFloat(953F, 45F);
-            this.xrPictureBoxFly.Name = "xrPictureBoxFly";
-            this.xrPictureBoxFly.SizeF = new System.Drawing.SizeF(91.99976F, 52.00002F);
-            this.xrPictureBoxFly.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
-            this.xrPictureBoxFly.Visible = false;
             // 
             // rptDelay
             // 

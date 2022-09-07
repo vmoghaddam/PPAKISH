@@ -316,10 +316,10 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.lblRev,
-            this.lblDate,
+            this.xrPictureBox1,
             this.xrLabel1,
-            this.xrPictureBox1});
+            this.lblDate,
+            this.lblRev});
             this.ReportHeader.HeightF = 84.49999F;
             this.ReportHeader.Name = "ReportHeader";
             // 
@@ -327,7 +327,7 @@
             // 
             this.lblRev.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblRev.ForeColor = System.Drawing.Color.Red;
-            this.lblRev.LocationFloat = new DevExpress.Utils.PointFloat(0F, 51.66667F);
+            this.lblRev.LocationFloat = new DevExpress.Utils.PointFloat(0F, 57.5F);
             this.lblRev.Multiline = true;
             this.lblRev.Name = "lblRev";
             this.lblRev.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -340,7 +340,7 @@
             // lblDate
             // 
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblDate.LocationFloat = new DevExpress.Utils.PointFloat(3.814697E-05F, 23.00001F);
+            this.lblDate.LocationFloat = new DevExpress.Utils.PointFloat(3.814697E-05F, 28.83334F);
             this.lblDate.Multiline = true;
             this.lblDate.Name = "lblDate";
             this.lblDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -353,7 +353,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 5.833333F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -368,7 +368,8 @@
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(142.5F, 66.49999F);
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(175F, 84.49999F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // DetailReport
             // 

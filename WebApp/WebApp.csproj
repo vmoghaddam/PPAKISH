@@ -153,6 +153,8 @@
     <Content Include="app\controllers\fomrsVacation.js" />
     <Content Include="app\controllers\forma.js" />
     <Content Include="app\controllers\formayearly.js" />
+    <Content Include="app\controllers\formB.js" />
+    <Content Include="app\controllers\formC.js" />
     <Content Include="app\controllers\formmovaled.js" />
     <Content Include="app\controllers\formmovaledyearly.js" />
     <Content Include="app\controllers\fuelbi.js" />
@@ -304,6 +306,8 @@
     <Content Include="app\views\fixtime.html" />
     <Content Include="app\views\fixtimereportdaily.html" />
     <Content Include="app\views\formayearly.html" />
+    <Content Include="app\views\formB.html" />
+    <Content Include="app\views\formC.html" />
     <Content Include="app\views\formmovaledyearly.html" />
     <Content Include="app\views\formsVacation.html" />
     <Content Include="app\views\imageviewer.html" />

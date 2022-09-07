@@ -63,5 +63,6 @@ namespace EPAGriffinAPI.Models
         public int BaggageWeight { get; set; }
         public int CargoWeight { get; set; }
         public Nullable<int> Freight { get; set; }
+        public Nullable<double> MaxCargoWeight { get; set; }
     }
 }

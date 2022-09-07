@@ -255,17 +255,47 @@
     <Compile Include="RptFormAYear.Designer.cs">
       <DependentUpon>RptFormAYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptFormB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptFormB.Designer.cs">
+      <DependentUpon>rptFormB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptFormC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptFormC.Designer.cs">
+      <DependentUpon>rptFormC.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptFPC.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptFPC.Designer.cs">
       <DependentUpon>rptFPC.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptFPCPasco.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptFPCPasco.Designer.cs">
+      <DependentUpon>rptFPCPasco.cs</DependentUpon>
+    </Compile>
     <Compile Include="RptGeneral7Row.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RptGeneral7Row.Designer.cs">
       <DependentUpon>RptGeneral7Row.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptLog18.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptLog18.Designer.cs">
+      <DependentUpon>rptLog18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptLogA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptLogA.Designer.cs">
+      <DependentUpon>rptLogA.cs</DependentUpon>
     </Compile>
     <Compile Include="RptMovaled.cs">
       <SubType>Component</SubType>
@@ -308,6 +338,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewCourseSessionPresence.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLogBook18.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="XtraReport1.cs">
@@ -411,8 +444,23 @@
     <EmbeddedResource Include="RptFormAYear.resx">
       <DependentUpon>RptFormAYear.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptFormB.resx">
+      <DependentUpon>rptFormB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFormC.resx">
+      <DependentUpon>rptFormC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptFPC.resx">
       <DependentUpon>rptFPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFPCPasco.resx">
+      <DependentUpon>rptFPCPasco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptLog18.resx">
+      <DependentUpon>rptLog18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptLogA.resx">
+      <DependentUpon>rptLogA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptMovaled.resx">
       <DependentUpon>RptMovaled.cs</DependentUpon>

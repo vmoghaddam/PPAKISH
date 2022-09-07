@@ -550,7 +550,37 @@ namespace EPAGriffinAPI.Controllers
             var result = await unitOfWork.FlightRepository.GetDelayMapTitles();
             return new CustomActionResult(HttpStatusCode.OK, result);
         }
+        [Route("odata/formb/report")]
+        [EnableQuery]
+        // [Authorize]
+        public IQueryable<ViewFormB> GetFormBReport(int year, int qrt)
+        {
 
+            var query = from x in unitOfWork.FlightRepository.GetViewFormB()
+                        where x.Year == year && x.Quarter==qrt
+                        select x;
+
+           
+
+
+            return query;
+        }
+
+        [Route("odata/formc/report")]
+        [EnableQuery]
+        // [Authorize]
+        public IQueryable<ViewFormC> GetFormCReport(int year, int month)
+        {
+
+            var query = from x in unitOfWork.FlightRepository.GetViewFormC()
+                        where x.Year == year && x.Month==month
+                        select x;
+
+
+
+
+            return query;
+        }
 
         [Route("odata/citypair/report")]
         [EnableQuery]

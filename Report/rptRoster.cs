@@ -31,7 +31,7 @@ namespace Report
         public bool hasISCCM { get; set; }
         public bool hasSCCM = true;
         public bool hasCCM = true;
-        public bool hasFM = true;
+        public bool hasFM = false;
 
         public int sccmMax { get; set; }
         public float cellFontSize = 8.3f;
@@ -86,8 +86,8 @@ namespace Report
         {
             table.BeginInit();
             XRTableRow row = table.Rows[0];
-            var cockpitCellWidth = 80;
-            var fmWidth = 60;
+            var cockpitCellWidth = 100;
+            var fmWidth = 0; //60;
             var cockpitCount = (hasIP ? 1 : 0) + (hasCPT ? 1 : 0) + (hasFO ? 1 : 0)+ (hasSAFETY ? 1 : 0) + (hasOBS ? 1 : 0) + (hasCHECK ? 1 : 0);
             var cockpitWidth = cockpitCount * cockpitCellWidth;
             var isccmWidth = hasISCCM ?  60 : 0;
@@ -173,17 +173,17 @@ namespace Report
                 row.Cells.Add(cell);
                 cell.DataBindings.Add("Text", null, "main.OBS");
             }
-            if (hasFM)
-            {
-                XRTableCell cell = new XRTableCell();
-                cell.TextTrimming = StringTrimming.None;
-                // cell.Font.FontFamily = "Segoe UI";
-                //cell.Font.Size = 
-                cell.Font = new Font("Segoe UI", cellFontSize2, FontStyle.Regular);
-                cell.WidthF = fmWidth;
-                row.Cells.Add(cell);
-                cell.DataBindings.Add("Text", null, "main.FM");
-            }
+            //if (hasFM)
+            //{
+            //    XRTableCell cell = new XRTableCell();
+            //    cell.TextTrimming = StringTrimming.None;
+            //    // cell.Font.FontFamily = "Segoe UI";
+            //    //cell.Font.Size = 
+            //    cell.Font = new Font("Segoe UI", cellFontSize2, FontStyle.Regular);
+            //    cell.WidthF = fmWidth;
+            //    row.Cells.Add(cell);
+            //    cell.DataBindings.Add("Text", null, "main.FM");
+            //}
             if (hasISCCM)
             {
                 XRTableCell cell = new XRTableCell();
@@ -251,8 +251,8 @@ namespace Report
 
         private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
-            var cockpitCellWidth = 80;
-            var fmWidth = 60;
+            var cockpitCellWidth = 100;
+            var fmWidth = 0; //60;
             var cockpitCount = (hasIP ? 1 : 0) + (hasCPT ? 1 : 0) + (hasFO ? 1 : 0) + (hasSAFETY ? 1 : 0) + (hasOBS ? 1 : 0) + (hasCHECK ? 1 : 0);  
             var cockpitWidth = cockpitCount * cockpitCellWidth;
             var isccmWidth = hasISCCM ? 60 : 0;
@@ -355,17 +355,17 @@ namespace Report
                 row.Cells.Add(cell);
                 cell.Text = "OBS";
             }
-            if (hasFM)
-            {
-                XRTableCell cell = new XRTableCell();
-                cell.TextTrimming = StringTrimming.None;
-                // cell.Font.FontFamily = "Segoe UI";
-                //cell.Font.Size = 
-                cell.Font = new Font("Segoe UI", cellFontSize2, FontStyle.Bold);
-                cell.WidthF = fmWidth;
-                row.Cells.Add(cell);
-                cell.Text = "F/M";
-            }
+            //if (hasFM)
+            //{
+            //    XRTableCell cell = new XRTableCell();
+            //    cell.TextTrimming = StringTrimming.None;
+            //    // cell.Font.FontFamily = "Segoe UI";
+            //    //cell.Font.Size = 
+            //    cell.Font = new Font("Segoe UI", cellFontSize2, FontStyle.Bold);
+            //    cell.WidthF = fmWidth;
+            //    row.Cells.Add(cell);
+            //    cell.Text = "F/M";
+            //}
             if (hasISCCM)
             {
                 XRTableCell cell = new XRTableCell();

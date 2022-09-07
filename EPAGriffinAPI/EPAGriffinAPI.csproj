@@ -1501,6 +1501,12 @@
     <Compile Include="Models\ViewFormAYearlyInt.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewFormB.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewFormC.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewIdeaLast.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

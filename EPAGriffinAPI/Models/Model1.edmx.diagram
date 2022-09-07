@@ -586,6 +586,8 @@
         <AssociationConnector Association="EPAGRIFFINModel.FK_CRSCATRATE_CRS" />
         <AssociationConnector Association="EPAGRIFFINModel.FK_PersonCourse_Course" />
         <AssociationConnector Association="EPAGRIFFINModel.fk_session_course" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFormB" Width="1.5" PointX="55.375" PointY="54.875" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFormC" Width="1.5" PointX="74.375" PointY="27.875" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

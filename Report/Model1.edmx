@@ -63,7 +63,7 @@
           <Property Name="LicenceExpireDate" Type="datetime" />
           <Property Name="SimulatorLastCheck" Type="datetime" />
           <Property Name="SimulatorNextCheck" Type="datetime" />
-          <Property Name="RampPassNo" Type="nvarchar" MaxLength="1" />
+          <Property Name="RampPassNo" Type="nvarchar" MaxLength="500" />
           <Property Name="RampPassExpireDate" Type="datetime" />
           <Property Name="LanguageCourseExpireDate" Type="datetime" />
           <Property Name="LicenceTitle" Type="nvarchar" MaxLength="500" />
@@ -132,9 +132,30 @@
           <Property Name="RecurrentExpireDate" Type="datetime" />
           <Property Name="FMTIssueDate" Type="datetime" />
           <Property Name="FMTExpireDate" Type="datetime" />
+          <Property Name="PFirstName" Type="nvarchar" MaxLength="500" />
+          <Property Name="PLastName" Type="nvarchar" MaxLength="500" />
+          <Property Name="MultiType" Type="varchar" MaxLength="1000" />
+          <Property Name="OtherAirline" Type="bit" />
+          <Property Name="TypeMDIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="TypeMDExpireDate" Type="datetime2" Precision="7" />
+          <Property Name="Type737IssueDate" Type="datetime2" Precision="7" />
+          <Property Name="Type737ExpireDate" Type="datetime2" Precision="7" />
+          <Property Name="TypeAirbusIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="TypeAirbusExpireDate" Type="datetime2" Precision="7" />
+          <Property Name="TypeMDConversionIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="Type737ConversionIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="TypeAirbusConversionIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="LRCIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="LRCExpireDate" Type="datetime2" Precision="7" />
+          <Property Name="RSPIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="RSPExpireDate" Type="datetime2" Precision="7" />
+          <Property Name="CTUIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="CTUExpireDate" Type="datetime2" Precision="7" />
+          <Property Name="SAIssueDate" Type="datetime2" Precision="7" />
+          <Property Name="SAExpireDate" Type="datetime2" Precision="7" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseNew' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ppa_taban.dbo.ViewCourseNew' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewCourseNew">
           <Key>
             <PropertyRef Name="Id" />
@@ -191,9 +212,16 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseNew' does not have a primar
           <Property Name="Instructor2EmployeeId" Type="int" />
           <Property Name="Instructor2JobGroup" Type="nvarchar" MaxLength="500" />
           <Property Name="Instructor2" Type="nvarchar" MaxLength="1001" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="SMSIns1" Type="varchar" MaxLength="2000" />
+          <Property Name="SMSIns2" Type="varchar" MaxLength="2000" />
+          <Property Name="SMSIns1Status" Type="varchar" MaxLength="500" />
+          <Property Name="SMSIns2Status" Type="varchar" MaxLength="500" />
+          <Property Name="SMSInsDate" Type="datetime2" Precision="7" />
+          <Property Name="AttForm" Type="varchar" MaxLength="1000" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ppa_cspn.dbo.ViewCoursePeople' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ppa_taban.dbo.ViewCoursePeople' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewCoursePeople">
           <Key>
             <PropertyRef Name="Id" />
@@ -243,6 +271,7 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCoursePeople' does not have a pri
           <Property Name="GroupId" Type="int" />
           <Property Name="JobGroup" Type="nvarchar" MaxLength="500" />
           <Property Name="JobGroupCode" Type="varchar" MaxLength="500" />
+          <Property Name="JobGroupCode2" Type="varchar" MaxLength="500" />
           <Property Name="JobGroupRoot" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="SexId" Type="int" Nullable="false" />
           <Property Name="NID" Type="nvarchar" MaxLength="500" Nullable="false" />
@@ -266,9 +295,19 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCoursePeople' does not have a pri
           <Property Name="Mandatory" Type="int" />
           <Property Name="ImgUrl" Type="varchar" MaxLength="2000" />
           <Property Name="EmployeeLocation" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="SMSStatus" Type="varchar" MaxLength="500" />
+          <Property Name="SMSDateSent" Type="datetime2" Precision="7" />
+          <Property Name="SMSRefId" Type="bigint" />
+          <Property Name="SMSMsg" Type="varchar" MaxLength="2000" />
+          <Property Name="Instructor1" Type="nvarchar" MaxLength="1001" />
+          <Property Name="Instructor2" Type="nvarchar" MaxLength="1001" />
+          <Property Name="Instructor2Id" Type="int" />
+          <Property Name="Instructor1Id" Type="int" />
+          <Property Name="Continual" Type="bit" />
+          <Property Name="InActive" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSession' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ppa_taban.dbo.ViewCourseSession' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewCourseSession">
           <Key>
             <PropertyRef Name="Id" />
@@ -308,7 +347,7 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSession' does not have a pr
           <Property Name="Status" Type="varchar" MaxLength="11" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'ppa_taban.dbo.ViewCourseSessionPresence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ViewCourseSessionPresence">
           <Key>
             
@@ -333,6 +372,43 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <Property Name="AttendancePercent" Type="numeric" Precision="26" Scale="12" />
           <Property Name="CourseSessionPresenceId" Type="int" />
           <Property Name="IsPresent" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ppa_taban.dbo.ViewLogBook18' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewLogBook18">
+          <Key>
+            <PropertyRef Name="FltNo" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="ArrStn" />
+            <PropertyRef Name="DepStn" />
+            <PropertyRef Name="ACReg" />
+          </Key>
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="DepStn" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ArrStn" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FltNo" Type="nvarchar" MaxLength="4000" Nullable="false" />
+          <Property Name="ACReg" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ACType" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="OffBlock" Type="datetime" />
+          <Property Name="OffBlockLocal" Type="datetime" />
+          <Property Name="OnBlock" Type="datetime" />
+          <Property Name="OnBlockLocal" Type="datetime" />
+          <Property Name="DayTakeOff" Type="int" />
+          <Property Name="NightTakeOff" Type="int" />
+          <Property Name="DayLanding" Type="int" />
+          <Property Name="NightLanding" Type="int" />
+          <Property Name="NightTime" Type="int" />
+          <Property Name="BlockTime" Type="int" />
+          <Property Name="MultiPilotTime" Type="int" />
+          <Property Name="IFRTime" Type="int" />
+          <Property Name="PICTime" Type="int" />
+          <Property Name="COPILOTTime" Type="int" />
+          <Property Name="IPTime" Type="int" />
+          <Property Name="DUALTime" Type="int" />
+          <Property Name="Pos" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dep2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Arr2" Type="nvarchar" MaxLength="255" />
+          <Property Name="PICName" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityContainer Name="PPAModelStoreContainer">
           <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
@@ -384,7 +460,14 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
     [ViewCourseNew].[Instructor2Id] AS [Instructor2Id], 
     [ViewCourseNew].[Instructor2EmployeeId] AS [Instructor2EmployeeId], 
     [ViewCourseNew].[Instructor2JobGroup] AS [Instructor2JobGroup], 
-    [ViewCourseNew].[Instructor2] AS [Instructor2]
+    [ViewCourseNew].[Instructor2] AS [Instructor2], 
+    [ViewCourseNew].[Cost] AS [Cost], 
+    [ViewCourseNew].[SMSIns1] AS [SMSIns1], 
+    [ViewCourseNew].[SMSIns2] AS [SMSIns2], 
+    [ViewCourseNew].[SMSIns1Status] AS [SMSIns1Status], 
+    [ViewCourseNew].[SMSIns2Status] AS [SMSIns2Status], 
+    [ViewCourseNew].[SMSInsDate] AS [SMSInsDate], 
+    [ViewCourseNew].[AttForm] AS [AttForm]
     FROM [dbo].[ViewCourseNew] AS [ViewCourseNew]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewCoursePeople" EntityType="Self.ViewCoursePeople" store:Type="Views" store:Schema="dbo">
@@ -420,6 +503,7 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
     [ViewCoursePeople].[GroupId] AS [GroupId], 
     [ViewCoursePeople].[JobGroup] AS [JobGroup], 
     [ViewCoursePeople].[JobGroupCode] AS [JobGroupCode], 
+    [ViewCoursePeople].[JobGroupCode2] AS [JobGroupCode2], 
     [ViewCoursePeople].[JobGroupRoot] AS [JobGroupRoot], 
     [ViewCoursePeople].[SexId] AS [SexId], 
     [ViewCoursePeople].[NID] AS [NID], 
@@ -442,7 +526,17 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
     [ViewCoursePeople].[IsNotificationEnabled] AS [IsNotificationEnabled], 
     [ViewCoursePeople].[Mandatory] AS [Mandatory], 
     [ViewCoursePeople].[ImgUrl] AS [ImgUrl], 
-    [ViewCoursePeople].[EmployeeLocation] AS [EmployeeLocation]
+    [ViewCoursePeople].[EmployeeLocation] AS [EmployeeLocation], 
+    [ViewCoursePeople].[SMSStatus] AS [SMSStatus], 
+    [ViewCoursePeople].[SMSDateSent] AS [SMSDateSent], 
+    [ViewCoursePeople].[SMSRefId] AS [SMSRefId], 
+    [ViewCoursePeople].[SMSMsg] AS [SMSMsg], 
+    [ViewCoursePeople].[Instructor1] AS [Instructor1], 
+    [ViewCoursePeople].[Instructor2] AS [Instructor2], 
+    [ViewCoursePeople].[Instructor2Id] AS [Instructor2Id], 
+    [ViewCoursePeople].[Instructor1Id] AS [Instructor1Id], 
+    [ViewCoursePeople].[Continual] AS [Continual], 
+    [ViewCoursePeople].[InActive] AS [InActive]
     FROM [dbo].[ViewCoursePeople] AS [ViewCoursePeople]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ViewCourseSession" EntityType="Self.ViewCourseSession" store:Type="Views" store:Schema="dbo">
@@ -497,6 +591,36 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
     [ViewCourseSessionPresence].[CourseSessionPresenceId] AS [CourseSessionPresenceId], 
     [ViewCourseSessionPresence].[IsPresent] AS [IsPresent]
     FROM [dbo].[ViewCourseSessionPresence] AS [ViewCourseSessionPresence]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewLogBook18" EntityType="Self.ViewLogBook18" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewLogBook18].[Date] AS [Date], 
+    [ViewLogBook18].[DepStn] AS [DepStn], 
+    [ViewLogBook18].[ArrStn] AS [ArrStn], 
+    [ViewLogBook18].[FltNo] AS [FltNo], 
+    [ViewLogBook18].[ACReg] AS [ACReg], 
+    [ViewLogBook18].[ACType] AS [ACType], 
+    [ViewLogBook18].[OffBlock] AS [OffBlock], 
+    [ViewLogBook18].[OffBlockLocal] AS [OffBlockLocal], 
+    [ViewLogBook18].[OnBlock] AS [OnBlock], 
+    [ViewLogBook18].[OnBlockLocal] AS [OnBlockLocal], 
+    [ViewLogBook18].[DayTakeOff] AS [DayTakeOff], 
+    [ViewLogBook18].[NightTakeOff] AS [NightTakeOff], 
+    [ViewLogBook18].[DayLanding] AS [DayLanding], 
+    [ViewLogBook18].[NightLanding] AS [NightLanding], 
+    [ViewLogBook18].[NightTime] AS [NightTime], 
+    [ViewLogBook18].[BlockTime] AS [BlockTime], 
+    [ViewLogBook18].[MultiPilotTime] AS [MultiPilotTime], 
+    [ViewLogBook18].[IFRTime] AS [IFRTime], 
+    [ViewLogBook18].[PICTime] AS [PICTime], 
+    [ViewLogBook18].[COPILOTTime] AS [COPILOTTime], 
+    [ViewLogBook18].[IPTime] AS [IPTime], 
+    [ViewLogBook18].[DUALTime] AS [DUALTime], 
+    [ViewLogBook18].[Pos] AS [Pos], 
+    [ViewLogBook18].[Dep2] AS [Dep2], 
+    [ViewLogBook18].[Arr2] AS [Arr2], 
+    [ViewLogBook18].[PICName] AS [PICName]
+    FROM [dbo].[ViewLogBook18] AS [ViewLogBook18]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -561,7 +685,7 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <Property Name="LicenceExpireDate" Type="DateTime" Precision="3" />
           <Property Name="SimulatorLastCheck" Type="DateTime" Precision="3" />
           <Property Name="SimulatorNextCheck" Type="DateTime" Precision="3" />
-          <Property Name="RampPassNo" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="RampPassNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="RampPassExpireDate" Type="DateTime" Precision="3" />
           <Property Name="LanguageCourseExpireDate" Type="DateTime" Precision="3" />
           <Property Name="LicenceTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -630,6 +754,27 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <Property Name="RecurrentExpireDate" Type="DateTime" Precision="3" />
           <Property Name="FMTIssueDate" Type="DateTime" Precision="3" />
           <Property Name="FMTExpireDate" Type="DateTime" Precision="3" />
+          <Property Name="PFirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PLastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MultiType" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="OtherAirline" Type="Boolean" />
+          <Property Name="TypeMDIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="TypeMDExpireDate" Type="DateTime" Precision="7" />
+          <Property Name="Type737IssueDate" Type="DateTime" Precision="7" />
+          <Property Name="Type737ExpireDate" Type="DateTime" Precision="7" />
+          <Property Name="TypeAirbusIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="TypeAirbusExpireDate" Type="DateTime" Precision="7" />
+          <Property Name="TypeMDConversionIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="Type737ConversionIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="TypeAirbusConversionIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="LRCIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="LRCExpireDate" Type="DateTime" Precision="7" />
+          <Property Name="RSPIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="RSPExpireDate" Type="DateTime" Precision="7" />
+          <Property Name="CTUIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="CTUExpireDate" Type="DateTime" Precision="7" />
+          <Property Name="SAIssueDate" Type="DateTime" Precision="7" />
+          <Property Name="SAExpireDate" Type="DateTime" Precision="7" />
         </EntityType>
         <EntityContainer Name="ppa_cspnEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="People" EntityType="Self.Person" />
@@ -637,6 +782,7 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <EntitySet Name="ViewCoursePeoples" EntityType="PPAModel.ViewCoursePeople" />
           <EntitySet Name="ViewCourseSessionPresences" EntityType="PPAModel.ViewCourseSessionPresence" />
           <EntitySet Name="ViewCourseNews" EntityType="PPAModel.ViewCourseNew" />
+          <EntitySet Name="ViewLogBook18" EntityType="PPAModel.ViewLogBook18" />
         </EntityContainer>
         <EntityType Name="ViewCourseSession">
           <Key>
@@ -748,6 +894,17 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <Property Name="Mandatory" Type="Int32" />
           <Property Name="ImgUrl" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="EmployeeLocation" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="JobGroupCode2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SMSStatus" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SMSDateSent" Type="DateTime" Precision="7" />
+          <Property Name="SMSRefId" Type="Int64" />
+          <Property Name="SMSMsg" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Instructor1" Type="String" MaxLength="1001" FixedLength="false" Unicode="true" />
+          <Property Name="Instructor2" Type="String" MaxLength="1001" FixedLength="false" Unicode="true" />
+          <Property Name="Instructor2Id" Type="Int32" />
+          <Property Name="Instructor1Id" Type="Int32" />
+          <Property Name="Continual" Type="Boolean" />
+          <Property Name="InActive" Type="Boolean" />
         </EntityType>
         <EntityType Name="ViewCourseSessionPresence">
           <Key>
@@ -826,6 +983,48 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <Property Name="Instructor2EmployeeId" Type="Int32" />
           <Property Name="Instructor2JobGroup" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Instructor2" Type="String" MaxLength="1001" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="SMSIns1" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="SMSIns2" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="SMSIns1Status" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SMSIns2Status" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SMSInsDate" Type="DateTime" Precision="7" />
+          <Property Name="AttForm" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ViewLogBook18">
+          <Key>
+            <PropertyRef Name="FltNo" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="ArrStn" />
+            <PropertyRef Name="DepStn" />
+            <PropertyRef Name="ACReg" />
+          </Key>
+          <Property Name="Date" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="DepStn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArrStn" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FltNo" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ACReg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACType" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="OffBlock" Type="DateTime" Precision="3" />
+          <Property Name="OffBlockLocal" Type="DateTime" Precision="3" />
+          <Property Name="OnBlock" Type="DateTime" Precision="3" />
+          <Property Name="OnBlockLocal" Type="DateTime" Precision="3" />
+          <Property Name="DayTakeOff" Type="Int32" />
+          <Property Name="NightTakeOff" Type="Int32" />
+          <Property Name="DayLanding" Type="Int32" />
+          <Property Name="NightLanding" Type="Int32" />
+          <Property Name="NightTime" Type="Int32" />
+          <Property Name="BlockTime" Type="Int32" />
+          <Property Name="MultiPilotTime" Type="Int32" />
+          <Property Name="IFRTime" Type="Int32" />
+          <Property Name="PICTime" Type="Int32" />
+          <Property Name="COPILOTTime" Type="Int32" />
+          <Property Name="IPTime" Type="Int32" />
+          <Property Name="DUALTime" Type="Int32" />
+          <Property Name="Pos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dep2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Arr2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PICName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -836,6 +1035,27 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <EntitySetMapping Name="People">
             <EntityTypeMapping TypeName="PPAModel.Person">
               <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="SAExpireDate" ColumnName="SAExpireDate" />
+                <ScalarProperty Name="SAIssueDate" ColumnName="SAIssueDate" />
+                <ScalarProperty Name="CTUExpireDate" ColumnName="CTUExpireDate" />
+                <ScalarProperty Name="CTUIssueDate" ColumnName="CTUIssueDate" />
+                <ScalarProperty Name="RSPExpireDate" ColumnName="RSPExpireDate" />
+                <ScalarProperty Name="RSPIssueDate" ColumnName="RSPIssueDate" />
+                <ScalarProperty Name="LRCExpireDate" ColumnName="LRCExpireDate" />
+                <ScalarProperty Name="LRCIssueDate" ColumnName="LRCIssueDate" />
+                <ScalarProperty Name="TypeAirbusConversionIssueDate" ColumnName="TypeAirbusConversionIssueDate" />
+                <ScalarProperty Name="Type737ConversionIssueDate" ColumnName="Type737ConversionIssueDate" />
+                <ScalarProperty Name="TypeMDConversionIssueDate" ColumnName="TypeMDConversionIssueDate" />
+                <ScalarProperty Name="TypeAirbusExpireDate" ColumnName="TypeAirbusExpireDate" />
+                <ScalarProperty Name="TypeAirbusIssueDate" ColumnName="TypeAirbusIssueDate" />
+                <ScalarProperty Name="Type737ExpireDate" ColumnName="Type737ExpireDate" />
+                <ScalarProperty Name="Type737IssueDate" ColumnName="Type737IssueDate" />
+                <ScalarProperty Name="TypeMDExpireDate" ColumnName="TypeMDExpireDate" />
+                <ScalarProperty Name="TypeMDIssueDate" ColumnName="TypeMDIssueDate" />
+                <ScalarProperty Name="OtherAirline" ColumnName="OtherAirline" />
+                <ScalarProperty Name="MultiType" ColumnName="MultiType" />
+                <ScalarProperty Name="PLastName" ColumnName="PLastName" />
+                <ScalarProperty Name="PFirstName" ColumnName="PFirstName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
                 <ScalarProperty Name="MarriageId" ColumnName="MarriageId" />
@@ -1002,6 +1222,17 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <EntitySetMapping Name="ViewCoursePeoples">
             <EntityTypeMapping TypeName="PPAModel.ViewCoursePeople">
               <MappingFragment StoreEntitySet="ViewCoursePeople">
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="Continual" ColumnName="Continual" />
+                <ScalarProperty Name="Instructor1Id" ColumnName="Instructor1Id" />
+                <ScalarProperty Name="Instructor2Id" ColumnName="Instructor2Id" />
+                <ScalarProperty Name="Instructor2" ColumnName="Instructor2" />
+                <ScalarProperty Name="Instructor1" ColumnName="Instructor1" />
+                <ScalarProperty Name="SMSMsg" ColumnName="SMSMsg" />
+                <ScalarProperty Name="SMSRefId" ColumnName="SMSRefId" />
+                <ScalarProperty Name="SMSDateSent" ColumnName="SMSDateSent" />
+                <ScalarProperty Name="SMSStatus" ColumnName="SMSStatus" />
+                <ScalarProperty Name="JobGroupCode2" ColumnName="JobGroupCode2" />
                 <ScalarProperty Name="EmployeeLocation" ColumnName="EmployeeLocation" />
                 <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
                 <ScalarProperty Name="Mandatory" ColumnName="Mandatory" />
@@ -1082,6 +1313,13 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
           <EntitySetMapping Name="ViewCourseNews">
             <EntityTypeMapping TypeName="PPAModel.ViewCourseNew">
               <MappingFragment StoreEntitySet="ViewCourseNew">
+                <ScalarProperty Name="AttForm" ColumnName="AttForm" />
+                <ScalarProperty Name="SMSInsDate" ColumnName="SMSInsDate" />
+                <ScalarProperty Name="SMSIns2Status" ColumnName="SMSIns2Status" />
+                <ScalarProperty Name="SMSIns1Status" ColumnName="SMSIns1Status" />
+                <ScalarProperty Name="SMSIns2" ColumnName="SMSIns2" />
+                <ScalarProperty Name="SMSIns1" ColumnName="SMSIns1" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Instructor2" ColumnName="Instructor2" />
                 <ScalarProperty Name="Instructor2JobGroup" ColumnName="Instructor2JobGroup" />
                 <ScalarProperty Name="Instructor2EmployeeId" ColumnName="Instructor2EmployeeId" />
@@ -1129,6 +1367,38 @@ warning 6002: The table/view 'ppa_cspn.dbo.ViewCourseSessionPresence' does not h
                 <ScalarProperty Name="CourseType" ColumnName="CourseType" />
                 <ScalarProperty Name="CourseTypeId" ColumnName="CourseTypeId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewLogBook18">
+            <EntityTypeMapping TypeName="PPAModel.ViewLogBook18">
+              <MappingFragment StoreEntitySet="ViewLogBook18">
+                <ScalarProperty Name="PICName" ColumnName="PICName" />
+                <ScalarProperty Name="Arr2" ColumnName="Arr2" />
+                <ScalarProperty Name="Dep2" ColumnName="Dep2" />
+                <ScalarProperty Name="Pos" ColumnName="Pos" />
+                <ScalarProperty Name="DUALTime" ColumnName="DUALTime" />
+                <ScalarProperty Name="IPTime" ColumnName="IPTime" />
+                <ScalarProperty Name="COPILOTTime" ColumnName="COPILOTTime" />
+                <ScalarProperty Name="PICTime" ColumnName="PICTime" />
+                <ScalarProperty Name="IFRTime" ColumnName="IFRTime" />
+                <ScalarProperty Name="MultiPilotTime" ColumnName="MultiPilotTime" />
+                <ScalarProperty Name="BlockTime" ColumnName="BlockTime" />
+                <ScalarProperty Name="NightTime" ColumnName="NightTime" />
+                <ScalarProperty Name="NightLanding" ColumnName="NightLanding" />
+                <ScalarProperty Name="DayLanding" ColumnName="DayLanding" />
+                <ScalarProperty Name="NightTakeOff" ColumnName="NightTakeOff" />
+                <ScalarProperty Name="DayTakeOff" ColumnName="DayTakeOff" />
+                <ScalarProperty Name="OnBlockLocal" ColumnName="OnBlockLocal" />
+                <ScalarProperty Name="OnBlock" ColumnName="OnBlock" />
+                <ScalarProperty Name="OffBlockLocal" ColumnName="OffBlockLocal" />
+                <ScalarProperty Name="OffBlock" ColumnName="OffBlock" />
+                <ScalarProperty Name="ACType" ColumnName="ACType" />
+                <ScalarProperty Name="ACReg" ColumnName="ACReg" />
+                <ScalarProperty Name="FltNo" ColumnName="FltNo" />
+                <ScalarProperty Name="ArrStn" ColumnName="ArrStn" />
+                <ScalarProperty Name="DepStn" ColumnName="DepStn" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
