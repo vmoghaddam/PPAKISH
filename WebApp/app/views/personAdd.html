@@ -179,11 +179,11 @@
                     <hr />
 
                     <!--Licences-->
-                    <div style="padding:5px;border:1px solid gray; background:#cccccc">
-                        Licensing
-                    </div>
-                    <div style="margin-top: 2px;" ng-show="IsCockpit() || IsCabin()">
-
+                    
+                    <div style="margin-top: 2px;" ng-show="(IsCockpit() || IsCabin()) && !IsLicDisabled" >
+                        <div style="padding:5px;border:1px solid gray; background:#cccccc">
+                            Licensing
+                        </div>
                         <!-- Cockpit -->
                         <div ng-hide=IsCabin();>
                             <div class="col-lg-2" style="padding:0;width:32%">
@@ -380,12 +380,12 @@
                     <!-- End of Licences -->
 
                     <div style="clear:both"></div>
-                    <div style="margin-top:5px;padding:5px;border:1px solid gray; background:#cccccc">
-                        Training
-                    </div>
+                    
                     <!-- Certificates -->
-                    <div style="margin: 5px 2.5px 0 2.5px;" ng-show="IsCockpit() || IsCabin()">
-
+                    <div style="margin: 5px 2.5px 0 2.5px;" ng-show="(IsCockpit() || IsCabin()) && !IsTrainingDisabled">
+                        <div style="margin-top:5px;padding:5px;border:1px solid gray; background:#cccccc">
+                            Training
+                        </div>
                         <div class="col-lg-2" style="padding:0;width:19.8%" ng-hide="IsCabin();">
                             <div style="margin:5px 2.5px 0  2.5px;padding-bottom:5px" class="groupbox">
                                 <div class="caption">
@@ -459,21 +459,23 @@
                                     <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7" style="padding-bottom:0">
                                         <label>Issue Date</label>
                                         <div dx-date-box="date_UpsetRecoveryTrainingIssueDate" class="center"></div>
+                                        <!--  date_CRMIssueDate-->
                                     </div>
                                     <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7">
                                         <label>Expire Date</label>
-                                        <div dx-date-box="date_UpsetRecoveryTrainingExpireDate" class="center"></div>
+                                        <div dx-date-box="date_UpsetRecoveryTrainingExpireDate " class="center"></div>
+                                        <!-- date_CRMExpireDate-->
                                     </div>
                                     <div style="clear:both"></div>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="col-lg-2" style="padding: 0; width: 19.8%">
+                        <!--<div class="col-lg-2" style="padding: 0; width: 19.8%">
                             <div style="margin:5px 2.5px 0  2.5px;padding-bottom:5px" class="groupbox">
                                 <div class="caption">
                                     CRMI
-                                    <a ng-click="doc_click('CCRM')" href=""><i class="icon ion-md-information-circle ion-20 " style="color:deepskyblue"></i></a>
+                                    <a ng-click="doc_click('CRMI')" href=""><i class="icon ion-md-information-circle ion-20 " style="color:deepskyblue"></i></a>
                                 </div>
                                 <div style="padding: 0 5px">
                                     <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7" style="padding-bottom:0">
@@ -488,7 +490,7 @@
                                 </div>
 
                             </div>
-                        </div>
+                        </div>-->
                         <!--<div style="clear:both"></div>-->
 
 
@@ -557,27 +559,8 @@
 
 
 
-                        <div class="col-lg-2" style="padding: 0; width: 19.8%">
-                            <div style="margin: 5px 2.5px 0 2.5px; padding-bottom: 5px" class="groupbox">
-                                <div class="caption">
-                                    Recurrent Training
-                                    <a ng-click="doc_click('ANNUALRECURRENT')" href=""><i class="icon ion-md-information-circle ion-20 " style="color:deepskyblue"></i></a>
-                                </div>
-                                <div style="padding: 0 5px">
-                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7" style="padding-bottom:0">
-                                        <label>Issue Date</label>
-                                        <div dx-date-box="date_RecurrentIssueDate" class="center"></div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7">
-                                        <label>Expire Date</label>
-                                        <div dx-date-box="date_RecurrentExpireDate" class="center"></div>
-                                    </div>
-                                    <div style="clear:both"></div>
-                                </div>
 
-                            </div>
-                        </div>
-                        <div class="col-lg-2" style="padding: 0; width: 19.8%" ng-hide="IsCockpit();">
+                        <div class="col-lg-2" style="padding: 0; width: 19.8%">
 
                             <div style="margin: 5px 2.5px 0 2.5px; padding-bottom: 5px" class="groupbox">
                                 <div class="caption">
@@ -598,6 +581,67 @@
 
                             </div>
                         </div>
+                        <div class="col-lg-2" style="padding: 0; width: 19.8%">
+                            <div style="margin: 5px 2.5px 0 2.5px; padding-bottom: 5px" class="groupbox">
+                                <div class="caption">
+                                    Recurrent Training
+                                    <a ng-click="doc_click('ANNUALRECURRENT')" href=""><i class="icon ion-md-information-circle ion-20 " style="color:deepskyblue"></i></a>
+                                </div>
+                                <div style="padding: 0 5px">
+                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7" style="padding-bottom:0">
+                                        <label>Issue Date</label>
+                                        <div dx-date-box="date_RecurrentIssueDate" class="center"></div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7">
+                                        <label>Expire Date</label>
+                                        <div dx-date-box="date_RecurrentExpireDate" class="center"></div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-2" style="padding:0;width:19.8%">
+                            <div style="margin:5px 5px 0  5px;padding-bottom:5px" class="groupbox">
+                                <div class="caption">
+                                    PreFlight
+                                    <a ng-click="doc_click('PreFlight')" href=""><i class="icon ion-md-information-circle ion-20 " style="color:deepskyblue"></i></a>
+                                </div>
+                                <div style="padding: 0 5px">
+                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7" style="padding-bottom:0">
+                                        <label>Issue Date</label>
+                                        <div dx-date-box="date_EGPWSIssueDate" class="center"></div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7">
+                                        <label>Expire Date</label>
+                                        <div dx-date-box="date_EGPWSExpireDate" class="center"></div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--<div class="col-lg-2" style="padding:0;width:19.8%">
+                            <div style="margin:5px 5px 0  5px;padding-bottom:5px" class="groupbox">
+                                <div class="caption">
+                                    TIC
+                                    <a ng-click="doc_click('TIC')" href=""><i class="icon ion-md-information-circle ion-20 " style="color:deepskyblue"></i></a>
+                                </div>
+                                <div style="padding: 0 5px">
+                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7" style="padding-bottom:0">
+                                        <label>Issue Date</label>
+                                        <div dx-date-box="date_AviationSecurityIssueDate" class="center"></div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-6 col-sm-12 col-12    padding-7">
+                                        <label>Expire Date</label>
+                                        <div dx-date-box="date_AviationSecurityExpireDate" class="center"></div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+                            </div>
+                        </div>-->
 
                         <div style="clear:both"></div>
 

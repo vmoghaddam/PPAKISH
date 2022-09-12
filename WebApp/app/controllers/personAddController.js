@@ -5,14 +5,18 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
     $scope.IsEditable = $rootScope.roles.indexOf('Admin') != -1 || $rootScope.userName.toLowerCase() == 'mohammadifard'
         || $rootScope.userName.toLowerCase() == 'ops.soltani'
         || $rootScope.userName.toLowerCase() == 'trn.rezaei'
-        || $rootScope.userName.toLowerCase() == 'trn.sarir'
+        || $rootScope.userName.toLowerCase() == 'trn.abdollahi'
         || $rootScope.userName.toLowerCase() == 'trn.barzegar'
         || $rootScope.userName.toLowerCase() == 'trn.moradi'
+	  || $rootScope.userName.toLowerCase() == 'trn.tanhaei'
         ;
 
-    $scope.IsTrainingReadOnly = $rootScope.userName.toLowerCase() == 'trn.barzegar' || $rootScope.userName.toLowerCase() == 'trn.rezaei' || $rootScope.userName.toLowerCase() == 'trn.sarir';
-    $scope.IsLicReadOnly = $rootScope.userName.toLowerCase() == 'trn.sarir' || $rootScope.userName.toLowerCase() == 'trn.moradi';
+    $scope.IsTrainingReadOnly = $rootScope.userName.toLowerCase() == 'trn.barzegar' || $rootScope.userName.toLowerCase() == 'trn.rezaei' || $rootScope.userName.toLowerCase() == 'trn.abdollahi';
+    $scope.IsLicReadOnly = $rootScope.userName.toLowerCase() == 'trn.abdollahi' || $rootScope.userName.toLowerCase() == 'trn.moradi';
     $scope.IsCerDisabled = $rootScope.userName.toLowerCase() == 'ops.soltani';
+
+    $scope.IsTrainingDisabled = $rootScope.userName.toLowerCase() == 'trn.barzegar' || $rootScope.userName.toLowerCase() == 'trn.rezaei';
+    $scope.IsLicDisabled = $rootScope.userName.toLowerCase() == 'trn.moradi'  || $rootScope.userName.toLowerCase() == 'trn.tanhaei';
 
     //moradi
     $scope.entity = {
@@ -1577,14 +1581,14 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
         type: 'date',
         displayFormat: $rootScope.DateBoxFormat,
         onValueChanged: function (e) {
-            if (!($scope.isNew || !$scope.entity.Person.SEPTExpireDate))
-                  return;
+            //if (!($scope.isNew || !$scope.entity.Person.SEPTExpireDate))
+            //      return;
             if (!e.value) {
                 $scope.entity.Person.SEPTExpireDate = null;
                 return;
             }
              //if ($scope.isNew || !$scope.entity.Person.SEPTExpireDate)
-                $scope.entity.Person.SEPTExpireDate = (new Date(e.value)).addYears(3);
+                $scope.entity.Person.SEPTExpireDate = (new Date(e.value)).addYears(1);
         },
         bindingOptions: {
             value: 'entity.Person.SEPTIssueDate',
@@ -1609,13 +1613,13 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
         type: 'date',
         displayFormat: $rootScope.DateBoxFormat,
         onValueChanged: function (e) {
-            if (!($scope.isNew || !$scope.entity.Person.SEPTPExpireDate))
-                return;
+            //if (!($scope.isNew || !$scope.entity.Person.SEPTPExpireDate))
+            //    return;
             if (!e.value) {
                 $scope.entity.Person.SEPTPExpireDate = null;
                 return;
             }
-            $scope.entity.Person.SEPTPExpireDate = (new Date(e.value)).addYears(1);
+            $scope.entity.Person.SEPTPExpireDate = (new Date(e.value)).addYears(3);
         },
         bindingOptions: {
             value: 'entity.Person.SEPTPIssueDate',
@@ -1637,6 +1641,7 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
     $scope.date_DangerousGoodsIssueDate = {
         width: '100%',
         type: 'date',
+        displayFormat: $rootScope.DateBoxFormat,
         onValueChanged: function (e) {
             //if (!($scope.isNew || !$scope.entity.Person.DangerousGoodsExpireDate))
             //    return;
@@ -1644,11 +1649,11 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
                 $scope.entity.Person.DangerousGoodsExpireDate = null;
                 return;
             }
-            if (!($scope.isNew || !$scope.entity.Person.DangerousGoodsExpireDate))
-                return;
+            //if (!($scope.isNew || !$scope.entity.Person.DangerousGoodsExpireDate))
+            //    return;
             $scope.entity.Person.DangerousGoodsExpireDate = (new Date(e.value)).addYears(2);
         },
-        displayFormat: $rootScope.DateBoxFormat,
+        
         bindingOptions: {
             value: 'entity.Person.DangerousGoodsIssueDate',
             readOnly: 'IsTrainingReadOnly',
@@ -1678,7 +1683,7 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
                 $scope.entity.Person.CCRMExpireDate = null;
                 return;
             }
-            $scope.entity.Person.CCRMExpireDate = (new Date(e.value)).addYears(5);
+            $scope.entity.Person.CCRMExpireDate = (new Date(e.value)).addYears(3);
         },
         bindingOptions: {
             value: 'entity.Person.CCRMIssueDate',
@@ -1703,17 +1708,20 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
         type: 'date',
         displayFormat: $rootScope.DateBoxFormat,
         onValueChanged: function (e) {
-            if (!($scope.isNew || !$scope.entity.Person.CRMExpireDate))
-                return;
+            //if (!($scope.isNew || !$scope.entity.Person.CRMExpireDate))
+             //   return;
             if (!e.value) {
                 $scope.entity.Person.CRMExpireDate = null;
                 return;
             }
-            $scope.entity.Person.CRMExpireDate = (new Date(e.value)).addYears(1);
+            $scope.entity.Person.CRMExpireDate = (new Date(e.value)).addYears(3);
+            
         },
         bindingOptions: {
             value: 'entity.Person.CRMIssueDate',
             readOnly: 'IsTrainingReadOnly',
+            disabled: 'IsCerDisabled',
+
         }
     };
     
@@ -1724,6 +1732,8 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
         bindingOptions: {
             value: 'entity.Person.CRMExpireDate',
             readOnly: 'IsTrainingReadOnly',
+            disabled: 'IsCerDisabled',
+
         }
     };
     //soltani
@@ -1797,8 +1807,8 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
         type: 'date',
         displayFormat: $rootScope.DateBoxFormat,
         onValueChanged: function (e) {
-            if (!($scope.isNew || !$scope.entity.Person.LineExpireDate))
-                 return;
+            //if (!($scope.isNew || !$scope.entity.Person.LineExpireDate))
+            //     return;
             if (!e.value) {
                 $scope.entity.Person.LineExpireDate = null;
                 return;
@@ -1828,8 +1838,8 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
         type: 'date',
         displayFormat: $rootScope.DateBoxFormat,
         onValueChanged: function (e) {
-            if (!($scope.isNew || !$scope.entity.Person.RecurrentExpireDate))
-                 return;
+            //if (!($scope.isNew || !$scope.entity.Person.RecurrentExpireDate))
+            //     return;
             if (!e.value) {
                 $scope.entity.Person.RecurrentExpireDate = null;
                 return;
@@ -1867,7 +1877,7 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
                 $scope.entity.Person.AviationSecurityExpireDate = null;
                 return;
             }
-            $scope.entity.Person.AviationSecurityExpireDate = (new Date(e.value)).addYears(3);
+            $scope.entity.Person.AviationSecurityExpireDate = (new Date(e.value)).addYears(5);
         },
         bindingOptions: {
             value: 'entity.Person.AviationSecurityIssueDate',
@@ -1897,7 +1907,7 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
                 $scope.entity.Person.EGPWSExpireDate = null;
                 return;
             }
-            $scope.entity.Person.EGPWSExpireDate = (new Date(e.value)).addYears(1);
+            $scope.entity.Person.EGPWSExpireDate = (new Date(e.value)).addYears(2);
         },
         bindingOptions: {
             value: 'entity.Person.EGPWSIssueDate',
@@ -1929,7 +1939,7 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
                 $scope.entity.Person.UpsetRecoveryTrainingExpireDate = null;
                 return;
             }
-            $scope.entity.Person.UpsetRecoveryTrainingExpireDate = (new Date(e.value)).addYears(1);
+            $scope.entity.Person.UpsetRecoveryTrainingExpireDate = (new Date(e.value)).addYears(3);
         },
         bindingOptions: {
             value: 'entity.Person.UpsetRecoveryTrainingIssueDate',
@@ -4487,7 +4497,7 @@ app.controller('personAddController', ['$scope', '$location', 'personService', '
     $scope.IsCockpit = function () {
         if (!$scope.selectedJobGroup)
             return false;
-        console.log($scope.selectedJobGroup);
+        //console.log($scope.selectedJobGroup);
         return $scope.selectedJobGroup.FullCode.startsWith('00101');
     };
     $scope.IsCabin = function () {

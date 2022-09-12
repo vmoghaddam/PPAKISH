@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="rowx footer">
-
+        
         <div class=" col-lg-11 col-md-11 col-sm-11 col-xs-11 dx-border" style="padding:0;">
             <table>
                 <tr>
@@ -302,8 +302,26 @@
         </div>
 
     </div>
-
-    <div ng-include="'app/views/personAdd.html'"></div>
+    <div id="grid_guide" style="position:absolute; bottom: 80px; right: 20px; z-index:3; background-color: white; padding: 15px; border-style:solid;
+     border-color: #ccc; border-width:2px;">
+        <div>
+            <table style="border-spacing: 0.5em 1em; border-collapse: separate; " >
+                <tr>
+                    <td width="20px" style="background-color: #ffd633;"></td>
+                    <td>31-60 days to expiry</td>
+                </tr>
+                <tr>
+                    <td width="20px" style="background-color: #ffa64d;"></td>
+                    <td>1-30 days to expiry</td>
+                </tr>
+                <tr>
+                    <td width="20px" style="background-color: #ff471a;"></td>
+                    <td>Expired</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div ng-include="'app/views/personAdd.html?v=100'"></div>
     <div ng-include="'app/views/personView.html'"></div>
     <div ng-include="'app/views/imageviewer.html'"></div>
     <div dx-load-panel="loadPanel"></div>

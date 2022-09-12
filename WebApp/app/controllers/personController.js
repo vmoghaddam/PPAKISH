@@ -7,6 +7,10 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
     $scope.editButtonIcon = 'edit';
     $scope.editButtonText = 'Edit';
     $scope.isCrew = $route.current.isCrew;
+
+    $scope.IsTrainingDisabled = $rootScope.userName.toLowerCase() == 'trn.barzegar' || $rootScope.userName.toLowerCase() == 'trn.rezaei' || $rootScope.userName.toLowerCase() == 'trn.abdollahi' ;
+    $scope.IsLicDisabled = $rootScope.userName.toLowerCase() == 'trn.moradi' ||  $rootScope.userName.toLowerCase() == 'trn.tanhaei' ;
+
     if (!$scope.IsEditable) {
         $scope.editButtonText = 'View';
         $scope.editButtonIcon = 'card';
@@ -309,6 +313,11 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
        //            .appendTo(container);
        //    }
        //},
+        {
+            caption: 'No.',
+            cellTemplate: function (cellElement, cellInfo) {
+                cellElement.text(cellInfo.row.rowIndex+1)
+            }, width: 60, fixedPosition: 'left', fixed: true, alignment: 'center', allowResizing: true, dataType: 'number', allowEditing: false},
         { dataField: 'InActive', caption: 'InActive', allowResizing: true, alignment: 'center', dataType: 'boolean', allowEditing: true, width: 70, fixed: true, fixedPosition: 'left' },
         {
             dataField: 'JobGroupRoot', caption: 'Group', allowResizing: true
@@ -317,7 +326,7 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
                          dataSource: $scope.groupDs
 
                      } 
-            , alignment: 'center', dataType: 'string', allowEditing: false, width: 150, fixed: true, fixedPosition: 'left'
+            , alignment: 'center', dataType: 'string', allowEditing: false, width: 100, fixed: true, fixedPosition: 'left'
         },
         {
             dataField: 'JobGroup', caption: 'Rank', allowResizing: true
@@ -326,48 +335,52 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
                              dataSource:$scope.rankDs
 
                          }
-            , alignment: 'center', dataType: 'string', allowEditing: false, width: 120, fixed: true, fixedPosition: 'left'
+            , alignment: 'center', dataType: 'string', allowEditing: false, width: 80, fixed: true, fixedPosition: 'left'
         },
-       { dataField: 'Name', caption: 'Name', allowResizing: true, alignment: 'left', dataType: 'string', allowEditing: false, width: 280, fixed: true, fixedPosition: 'left' },
+       { dataField: 'Name', caption: 'Name', allowResizing: true, alignment: 'left', dataType: 'string', allowEditing: false, minWidth: 280, fixed: true, fixedPosition: 'left', sortOrder:'asc' },
                 { dataField: 'PID', caption: 'EMP.No', allowResizing: true, alignment: 'center', dataType: 'string', allowEditing: false, width: 120 },
 
-        { dataField: 'Mobile', caption: 'Mobile', allowResizing: true, alignment: 'center', dataType: 'string', allowEditing: false, width: 130 },
-        { dataField: 'RemainCMC', caption: 'CMC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-        { dataField: 'RemainLicence', caption: 'Licence', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-        { dataField: 'RemainMedical', caption: 'Medical', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-         { dataField: 'RemainPassport', caption: 'Passport', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-
-          
-           { dataField: 'RemainProficiency', caption: 'LPC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-            { dataField: 'RemainProficiencyOPC', caption: 'OPC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-             { dataField: 'RemainLPR', caption: 'LPR', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-
-           //  { dataField: 'RemainAvSec', caption: 'AvSec', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-              { dataField: 'RemainSMS', caption: 'SMS', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-
-        //7-12
-        { dataField: 'RemainSEPTP', caption: 'SEPT-P', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-        //04-30
-        { dataField: 'RemainSEPT',name:'SEPTT', caption: 'ESET', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-
-
-        { dataField: 'RemainDG', caption: 'DG', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-                { dataField: 'RemainCRM', caption: 'CRM', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-                { dataField: 'RemainCCRM', caption: 'CRMI', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
-        //moradi
-       // { dataField: 'RemainFirstAid', caption: 'FirstAid', name: 'FirstAid', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90, visible:false },
-        { dataField: 'RemainLine', caption: 'Line', name: 'Line', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 },
-       // { dataField: 'RemainCAO', caption: 'GRT', name: 'GRT', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 },
-
-        //nasiri
-     //   { dataField: 'RemainEGPWS', caption: 'FMT', name: 'FMT', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 },
-
-        { dataField: 'RemainRecurrent', caption: 'Recurrent',name:'Recurrent', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100,visible:false },
-        //moradi2
-      
+        { dataField: 'Mobile', caption: 'Mobile', allowResizing: true, alignment: 'center', dataType: 'string', allowEditing: false, width: 130 }   
         
-    ];
 
+    ];
+    //Show Licences (Show to everyone but training user)
+    if (!$scope.IsLicDisabled) {
+        $scope.dg_columns2.push({ dataField: 'RemainPassport', caption: 'Passport', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainCMC', caption: 'CMC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainLicence', caption: 'Licence', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainMedical', caption: 'Medical', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainProficiency', caption: 'LPC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainProficiencyOPC', caption: 'OPC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainLPR', caption: 'LPR', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 });
+    } 
+    //Show Trainings (Show to everyone but licencing user)
+    if (!$scope.IsTrainingDisabled) {
+        $scope.dg_columns2.push(
+            { dataField: 'RemainSEPT', name: 'SEPTT', caption: 'ESET', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainSEPTP', caption: 'SEPT-P', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainDG', caption: 'DG', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainCRM', caption: 'CRM', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            /*{ dataField: 'RemainCCRM', caption: 'CRMI', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },*/
+            { dataField: 'RemainLine', caption: 'Line', name: 'Line', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 },
+            { dataField: 'RemainHotWeather', caption: 'Hot W.', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainColdWeather', caption: 'Cold W.', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainSMS', caption: 'SMS', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 },
+            { dataField: 'RemainRecurrent', caption: 'Recurrent', name: 'Recurrent', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 },
+            { dataField: 'RemainEGPWS', caption: 'PreFlight', name: 'PreFlight', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 }
+            /*{ dataField: 'RemainAvSec', caption: 'TIC', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90 }*/
+        );
+            
+            //moradi
+            // { dataField: 'RemainFirstAid', caption: 'FirstAid', name: 'FirstAid', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 90, visible:false },
+            
+            // { dataField: 'RemainCAO', caption: 'GRT', name: 'GRT', allowResizing: true, alignment: 'center', dataType: 'number', allowEditing: false, width: 100 },
+
+            //nasiri
+            
+    }
+
+    
     //nasiri
     $scope._cer = $rootScope.getCertificateTypeList();
     $scope._cerDetails = $rootScope.getCertificateTypeListDetails();
@@ -492,7 +505,12 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
             if (e.rowType === "data" && e.column.dataField == "RemainCAO") {
                 $scope.styleCell(e, e.data.RemainCAO);
             }
-
+            if (e.rowType === "data" && e.column.dataField == "RemainHotWeather") {
+                $scope.styleCell(e, e.data.RemainHotWeather);
+            }
+            if (e.rowType === "data" && e.column.dataField == "RemainColdWeather") {
+                $scope.styleCell(e, e.data.RemainColdWeather);
+            }
             
 
 
@@ -518,6 +536,8 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
                 || (e.column.dataField == "RemainCAO")
                 //nasiri
                 || (e.column.dataField == "RemainEGPWS")
+                || (e.column.dataField == "RemainHot")
+                || (e.column.dataField == "RemainCold")
                 || (e.column.dataField == "RemainRecurrent")
                 //moradi2
                 || (e.column.dataField == "RemainCMC")
@@ -535,7 +555,7 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
         },
         onCellClick:function(e){
             if (e.column.dataField == 'InActive') {
-                General.Confirm("Are you sure?", function (res) {
+                General.Confirm("Are you sure to change the status of this employee?", function (res) {
                     if (res) {
 
                         var newvalue = !e.value;
@@ -606,7 +626,7 @@ app.controller('personController', ['$scope', '$location', '$routeParams', '$roo
             e.cellElement.css("color", "#fff");
             return;
         }
-        if (value>30 && value<=45){
+        if (value>30 && value<=60){
             e.cellElement.css("backgroundColor", "#ffd633");
             e.cellElement.css("color", "#000");
         }
