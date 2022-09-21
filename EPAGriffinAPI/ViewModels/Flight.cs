@@ -189,6 +189,9 @@ namespace EPAGriffinAPI.ViewModels
         public int? ExBagWeight { get; set; }
         public long? ExBagCost { get; set; }
 
+
+        public int? TotalTrafficLoad { get; set; }
+
         public static void Fill(Models.FlightInformation entity, ViewModels.FlightDto flightinformation)
         {
             entity.ID = flightinformation.ID;
@@ -333,6 +336,8 @@ namespace EPAGriffinAPI.ViewModels
             entity.WLCost = flightinformation.WLCost;
             entity.ExBagWeight = flightinformation.ExBagWeight;
             entity.ExBagCost = flightinformation.ExBagCost;
+
+            entity.TotalTrafficLoad = flightinformation.TotalTrafficLoad;
         }
 
         public static void FillNotID(Models.FlightInformation entity, ViewModels.FlightDto flightinformation)
@@ -620,6 +625,8 @@ namespace EPAGriffinAPI.ViewModels
             entity.WLCost = flightinformation.WLCost;
             entity.ExBagWeight = flightinformation.ExBagWeight;
             entity.ExBagCost = flightinformation.ExBagCost;
+
+            entity.TotalTrafficLoad = flightinformation.TotalTrafficLoad;
         }
         public static void FillDto(Models.FlightInformation entity, ViewModels.FlightDto flightinformation)
         {
@@ -1022,6 +1029,8 @@ namespace EPAGriffinAPI.ViewModels
         public int? ExBagWeight { get; set; }
         public long? ExBagCost { get; set; }
 
+        public int? TotalTrafficLoad { get; set; }
+
         public static void Fill(Models.ViewFlightInformation entity, ViewModels.ViewFlightInformationDto viewflightinformation)
         {
             entity.ID = viewflightinformation.ID;
@@ -1236,6 +1245,8 @@ namespace EPAGriffinAPI.ViewModels
             entity.WLCost = viewflightinformation.WLCost;
             entity.ExBagWeight = viewflightinformation.ExBagWeight;
             entity.ExBagCost = viewflightinformation.ExBagCost;
+
+            entity.TotalTrafficLoad = viewflightinformation.TotalTrafficLoad;
 
         }
         public static void FillDto(Models.ViewFlightInformation entity, ViewModels.ViewFlightInformationDto viewflightinformation, int tzoffset, int? utc = 0)
@@ -1486,6 +1497,8 @@ namespace EPAGriffinAPI.ViewModels
             viewflightinformation.WLCost = entity.WLCost;
             viewflightinformation.ExBagWeight = entity.ExBagWeight;
             viewflightinformation.ExBagCost = entity.ExBagCost;
+
+            viewflightinformation.TotalTrafficLoad = entity.TotalTrafficLoad;
 
 
         }
@@ -2028,6 +2041,8 @@ namespace EPAGriffinAPI.ViewModels
             viewflightinformation.ExBagWeight = entity.ExBagWeight;
             viewflightinformation.ExBagCost = entity.ExBagCost;
 
+            viewflightinformation.TotalTrafficLoad = entity.TotalTrafficLoad;
+
             return viewflightinformation;
         }
     }
@@ -2305,6 +2320,9 @@ namespace EPAGriffinAPI.ViewModels
         public long? WLCost { get; set; }
         public int? ExBagWeight { get; set; }
         public long? ExBagCost { get; set; }
+
+
+        public int? TotalTrafficLoad { get; set; }
 
         public static void Fill(Models.ViewFlightsGantt entity, ViewModels.ViewFlightsGanttDto viewflightinformation)
         {
@@ -2792,6 +2810,8 @@ namespace EPAGriffinAPI.ViewModels
             viewflightinformation.WLCount = entity.WLCount;
             viewflightinformation.ExBagCost = entity.ExBagCost;
             viewflightinformation.ExBagWeight = entity.ExBagWeight;
+
+            viewflightinformation.TotalTrafficLoad = entity.TotalTrafficLoad;
 
         }
         public static void FillDto(Models.ViewLegTime entity, ViewModels.ViewFlightInformationDto viewflightinformation, int tzoffset)
@@ -4075,6 +4095,8 @@ namespace EPAGriffinAPI.ViewModels
         public long? WLCost { get; set; }
         public int? ExBagWeight { get; set; }
         public long? ExBagCost { get; set; }
+
+        public int? TotalTrafficLoad { get; set; }
     }
     public class FlightCancelDto
     {

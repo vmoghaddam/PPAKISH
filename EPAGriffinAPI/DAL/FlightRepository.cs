@@ -2535,6 +2535,7 @@ namespace EPAGriffinAPI.DAL
             flight.WLCost = dto.WLCost;
             flight.ExBagWeight = dto.ExBagWeight;
             flight.ExBagCost = dto.ExBagCost;
+            flight.TotalTrafficLoad = dto.TotalTrafficLoad;
 
 
 
@@ -3150,6 +3151,8 @@ namespace EPAGriffinAPI.DAL
             flight.WLCost = dto.WLCost;
             flight.ExBagWeight = dto.ExBagWeight;
             flight.ExBagCost = dto.ExBagCost;
+
+            flight.TotalTrafficLoad = dto.TotalTrafficLoad;
 
             if (dto.FlightStatusID != null)
                 flight.FlightStatusID = dto.FlightStatusID;

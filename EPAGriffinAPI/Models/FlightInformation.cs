@@ -155,6 +155,7 @@ namespace EPAGriffinAPI.Models
         public string ALT5 { get; set; }
         public Nullable<int> UTCDIFF { get; set; }
         public Nullable<decimal> FPTripFuel { get; set; }
+        public string Charterer { get; set; }
         public string ChrCode { get; set; }
         public string ChrTitle { get; set; }
         public Nullable<int> ChrCapacity { get; set; }
@@ -163,9 +164,12 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> ChrInfant { get; set; }
         public string ATCPlan { get; set; }
         public string ATL { get; set; }
-        public string Charterer { get; set; }
+        public Nullable<System.DateTime> Ready { get; set; }
+        public Nullable<System.DateTime> Start { get; set; }
+        public Nullable<int> CargoPieces { get; set; }
         public Nullable<long> CargoCost { get; set; }
         public Nullable<int> FreeAWBCount { get; set; }
+        public Nullable<int> FreeAWBPieces { get; set; }
         public Nullable<int> FreeAWBWeight { get; set; }
         public Nullable<int> NoShowCount { get; set; }
         public Nullable<int> NoShowPieces { get; set; }
@@ -175,8 +179,6 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> DSWarmFood { get; set; }
         public Nullable<int> DSColdFood { get; set; }
         public Nullable<int> DSRefreshment { get; set; }
-        public Nullable<System.DateTime> Ready { get; set; }
-        public Nullable<System.DateTime> Start { get; set; }
         public Nullable<int> YClass { get; set; }
         public Nullable<int> CClass { get; set; }
         public Nullable<int> PaxAdult50 { get; set; }
@@ -192,8 +194,6 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> PaxAVI { get; set; }
         public Nullable<int> PaxWCHR { get; set; }
         public Nullable<int> PaxSTRC { get; set; }
-        public Nullable<int> FreeAWBPieces { get; set; }
-        public Nullable<int> CargoPieces { get; set; }
         public Nullable<int> PaxPIRLost { get; set; }
         public Nullable<int> PaxPIRDamage { get; set; }
         public Nullable<int> PaxPIRFound { get; set; }
@@ -261,6 +261,7 @@ namespace EPAGriffinAPI.Models
         public Nullable<long> WLCost { get; set; }
         public Nullable<int> ExBagWeight { get; set; }
         public Nullable<long> ExBagCost { get; set; }
+        public Nullable<int> TotalTrafficLoad { get; set; }
     
         public virtual Ac_MSN Ac_MSN { get; set; }
         public virtual AircraftType AircraftType { get; set; }

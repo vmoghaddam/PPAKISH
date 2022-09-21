@@ -20,9 +20,33 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> CargoUnitID { get; set; }
         public string CargoUnit { get; set; }
         public Nullable<int> CargoWeight { get; set; }
+        public Nullable<int> PaxChild { get; set; }
+        public Nullable<int> PaxInfant { get; set; }
+        public Nullable<int> PaxAdult { get; set; }
+        public Nullable<decimal> FuelArrival { get; set; }
+        public Nullable<decimal> FuelDeparture { get; set; }
+        public Nullable<decimal> FuelActual { get; set; }
+        public Nullable<decimal> FuelPlanned { get; set; }
+        public Nullable<decimal> FuelVariance { get; set; }
+        public Nullable<decimal> GWLand { get; set; }
+        public Nullable<decimal> GWTO { get; set; }
+        public Nullable<byte> BlockM { get; set; }
+        public Nullable<int> BlockH { get; set; }
+        public Nullable<int> FlightH { get; set; }
+        public Nullable<byte> FlightM { get; set; }
+        public Nullable<System.DateTime> ChocksIn { get; set; }
+        public Nullable<System.DateTime> Landing { get; set; }
+        public Nullable<System.DateTime> Takeoff { get; set; }
+        public Nullable<System.DateTime> ChocksOut { get; set; }
+        public Nullable<System.DateTime> STD { get; set; }
+        public Nullable<System.DateTime> STA { get; set; }
+        public Nullable<System.DateTime> Ready { get; set; }
+        public Nullable<System.DateTime> Start { get; set; }
+        public Nullable<int> CargoPieces { get; set; }
         public Nullable<long> CargoCost { get; set; }
-        public Nullable<int> FreeAWBWeight { get; set; }
         public Nullable<int> FreeAWBCount { get; set; }
+        public Nullable<int> FreeAWBPieces { get; set; }
+        public Nullable<int> FreeAWBWeight { get; set; }
         public Nullable<int> NoShowCount { get; set; }
         public Nullable<int> NoShowPieces { get; set; }
         public Nullable<int> NoGoCount { get; set; }
@@ -31,13 +55,6 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> DSWarmFood { get; set; }
         public Nullable<int> DSColdFood { get; set; }
         public Nullable<int> DSRefreshment { get; set; }
-        public Nullable<int> PaxChild { get; set; }
-        public Nullable<int> PaxInfant { get; set; }
-        public Nullable<int> PaxAdult { get; set; }
-        public Nullable<decimal> FuelArrival { get; set; }
-        public Nullable<decimal> FuelDeparture { get; set; }
-        public Nullable<System.DateTime> Ready { get; set; }
-        public Nullable<System.DateTime> Start { get; set; }
         public Nullable<int> YClass { get; set; }
         public Nullable<int> CClass { get; set; }
         public Nullable<int> PaxAdult50 { get; set; }
@@ -53,8 +70,6 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> PaxAVI { get; set; }
         public Nullable<int> PaxWCHR { get; set; }
         public Nullable<int> PaxSTRC { get; set; }
-        public Nullable<int> FreeAWBPieces { get; set; }
-        public Nullable<int> CargoPieces { get; set; }
         public Nullable<int> PaxPIRLost { get; set; }
         public Nullable<int> PaxPIRDamage { get; set; }
         public Nullable<int> PaxPIRFound { get; set; }
@@ -118,21 +133,11 @@ namespace EPAGriffinAPI.Models
         public Nullable<int> CLArrPaxCarCount { get; set; }
         public Nullable<int> CLArrToiletService { get; set; }
         public string CLArrEqRemark { get; set; }
-        public Nullable<decimal> FuelActual { get; set; }
-        public Nullable<decimal> FuelPlanned { get; set; }
-        public Nullable<decimal> FuelVariance { get; set; }
-        public Nullable<decimal> GWLand { get; set; }
-        public Nullable<decimal> GWTO { get; set; }
-        public Nullable<byte> BlockM { get; set; }
-        public Nullable<int> BlockH { get; set; }
-        public Nullable<int> FlightH { get; set; }
-        public Nullable<byte> FlightM { get; set; }
-        public Nullable<System.DateTime> ChocksIn { get; set; }
-        public Nullable<System.DateTime> Landing { get; set; }
-        public Nullable<System.DateTime> Takeoff { get; set; }
-        public Nullable<System.DateTime> ChocksOut { get; set; }
-        public Nullable<System.DateTime> STD { get; set; }
-        public Nullable<System.DateTime> STA { get; set; }
+        public Nullable<int> WLCount { get; set; }
+        public Nullable<long> WLCost { get; set; }
+        public Nullable<int> ExBagWeight { get; set; }
+        public Nullable<long> ExBagCost { get; set; }
+        public Nullable<int> TotalTrafficLoad { get; set; }
         public Nullable<System.DateTime> STDLocal { get; set; }
         public Nullable<System.DateTime> STALocal { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
@@ -283,9 +288,5 @@ namespace EPAGriffinAPI.Models
         public string ChrTitle { get; set; }
         public string ChrCode { get; set; }
         public Nullable<int> DefaultChrId { get; set; }
-        public Nullable<int> WLCount { get; set; }
-        public Nullable<long> WLCost { get; set; }
-        public Nullable<int> ExBagWeight { get; set; }
-        public Nullable<long> ExBagCost { get; set; }
     }
 }

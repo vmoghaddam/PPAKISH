@@ -775,6 +775,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         $scope.flight.Start = $scope.before_refreshed_flight.Start;
         $scope.flight.YClass = $scope.before_refreshed_flight.YClass;
         $scope.flight.CClass = $scope.before_refreshed_flight.CClass;
+        $scope.flight.TotalTrafficLoad = $scope.before_refreshed_flight.TotalTrafficLoad;
         $scope.flight.PaxAdult50 = $scope.before_refreshed_flight.PaxAdult50;
         $scope.flight.PaxChild50 = $scope.before_refreshed_flight.PaxChild50;
         $scope.flight.PaxInfant50 = $scope.before_refreshed_flight.PaxInfant50;
@@ -952,6 +953,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
             $scope.flight.Start = null;
             $scope.flight.YClass = null;
             $scope.flight.CClass = null;
+            $scope.flight.TotalTrafficLoad = null;
             $scope.flight.PaxAdult50 = null;
             $scope.flight.PaxChild50 = null;
             $scope.flight.PaxInfant50 = null;
@@ -1689,6 +1691,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         data.Start = newData.Start;
         data.YClass = newData.YClass;
         data.CClass = newData.CClass;
+        data.TotalTrafficLoad = newData.TotalTrafficLoad;
         data.PaxAdult50 = newData.PaxAdult50;
         data.PaxChild50 = newData.PaxChild50;
         data.PaxInfant50 = newData.PaxInfant50;
@@ -5202,6 +5205,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
 
     $scope.y_class = { readOnly: false, min: 0, bindingOptions: { value: 'logFlight.YClass', } };
     $scope.c_class = { readOnly: false, min: 0, bindingOptions: { value: 'logFlight.CClass', } };
+    $scope.total_traffic_load = { readOnly: false, min: 0, bindingOptions: { value: 'logFlight.TotalTrafficLoad', } };
     $scope.pax_vip = { readOnly: false, min: 0, bindingOptions: { value: 'logFlight.PaxVIP', } };
     $scope.pax_cip = { readOnly: false, min: 0, bindingOptions: { value: 'logFlight.PaxCIP', } };
     $scope.pax_hum = { readOnly: false, min: 0, bindingOptions: { value: 'logFlight.PaxHUM', } };
@@ -9129,6 +9133,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         entity.Start = toStringCustom($scope.logFlight.Start);
         entity.YClass = $scope.logFlight.YClass;
         entity.CClass = $scope.logFlight.CClass;
+        entity.TotalTrafficLoad = $scope.logFlight.TotalTrafficLoad;
         entity.PaxAdult50 = $scope.logFlight.PaxAdult50;
         entity.PaxChild50 = $scope.logFlight.PaxChild50;
         entity.PaxInfant50 = $scope.logFlight.PaxInfant50;
@@ -9301,6 +9306,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         entity.Start = $scope.flight.Start;
         entity.YClass = $scope.flight.YClass;
         entity.CClass = $scope.flight.CClass;
+        entity.TotalTrafficLoad = $scope.flight.TotalTrafficLoad;
         entity.PaxAdult50 = $scope.flight.PaxAdult50;
         entity.PaxChild50 = $scope.flight.PaxChild50;
         entity.PaxInfant50 = $scope.flight.PaxInfant50;
@@ -19030,9 +19036,9 @@ dto.ChrCapacity = $scope.mchr.Capacity;
 
                             $scope.loadingVisible = true;
                             flightService.saveFlightLog(dto).then(function (response) {
-								
-								 flightService.sendMVT($scope.logFlight.ID,'demo');
-								  flightService.sendLDM($scope.logFlight.ID,'demo');
+                                
+								 //flightService.sendMVT($scope.logFlight.ID,'demo');
+								 //flightService.sendLDM($scope.logFlight.ID,'demo');
 								 
 
                                 for (var key of Object.keys(response.flight)) {

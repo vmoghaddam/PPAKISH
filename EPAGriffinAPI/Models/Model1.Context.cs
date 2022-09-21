@@ -434,16 +434,16 @@ namespace EPAGriffinAPI.Models
         public virtual DbSet<AppFuel> AppFuels { get; set; }
         public virtual DbSet<ViewEmployee> ViewEmployees { get; set; }
         public virtual DbSet<Person> People { get; set; }
-        public virtual DbSet<FlightInformation> FlightInformations { get; set; }
         public virtual DbSet<ViewBoardSummary> ViewBoardSummaries { get; set; }
-        public virtual DbSet<ViewFlightInformation> ViewFlightInformations { get; set; }
-        public virtual DbSet<ViewFlightsGantt> ViewFlightsGantts { get; set; }
         public virtual DbSet<ViewPlanFlight> ViewPlanFlights { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<FlightRoute> FlightRoutes { get; set; }
         public virtual DbSet<HelperPerson> HelperPersons { get; set; }
         public virtual DbSet<ViewFormB> ViewFormBs { get; set; }
         public virtual DbSet<ViewFormC> ViewFormCs { get; set; }
+        public virtual DbSet<FlightInformation> FlightInformations { get; set; }
+        public virtual DbSet<ViewFlightInformation> ViewFlightInformations { get; set; }
+        public virtual DbSet<ViewFlightsGantt> ViewFlightsGantts { get; set; }
     
         public virtual int GetOverDuty(string aDate, Nullable<int> aDuty, Nullable<int> aFlight, Nullable<int> aPID)
         {

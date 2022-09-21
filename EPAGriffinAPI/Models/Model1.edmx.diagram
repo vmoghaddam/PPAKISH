@@ -542,11 +542,31 @@
         <AssociationConnector Association="EPAGRIFFINModel.FK_PersonRating_Person" />
         <AssociationConnector Association="EPAGRIFFINModel.FK_UM_Type_Access_UM_Users" />
         <AssociationConnector Association="EPAGRIFFINModel.FK_UserCourse_Person" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.FlightInformation" Width="1.5" PointX="92.875" PointY="7.5" />
         <EntityTypeShape EntityType="EPAGRIFFINModel.ViewBoardSummary" Width="1.5" PointX="22.375" PointY="64.75" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFlightInformation" Width="1.5" PointX="68.375" PointY="76.75" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFlightsGantt" Width="1.5" PointX="70.375" PointY="76.75" />
         <EntityTypeShape EntityType="EPAGRIFFINModel.ViewPlanFlight" Width="1.5" PointX="22.375" PointY="78.75" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.Course" Width="1.5" PointX="13.5" PointY="0.75" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.FlightRoute" Width="1.5" PointX="47.375" PointY="20.875" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.HelperPerson" Width="1.5" PointX="55.375" PointY="72.875" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_ACMODEL" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_ACTYPE" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_CaoType" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSE_COURSE" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSE_COURSERELATED" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_Type" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSEACTYPE_COURSE" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSEEMPLOYEE_COURSE" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSEGROUP_COURSE" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSESTUDYFIELD" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSETYPE_COURSE" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_CRSACTYPE_CRS" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_CRSCATRATE_CRS" />
+        <AssociationConnector Association="EPAGRIFFINModel.FK_PersonCourse_Course" />
+        <AssociationConnector Association="EPAGRIFFINModel.fk_session_course" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFormB" Width="1.5" PointX="55.375" PointY="54.875" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFormC" Width="1.5" PointX="74.375" PointY="27.875" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.FlightInformation" Width="1.5" PointX="92.875" PointY="7.25" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFlightInformation" Width="1.5" PointX="68.375" PointY="77" />
+        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFlightsGantt" Width="1.5" PointX="70.375" PointY="77" />
         <AssociationConnector Association="EPAGRIFFINModel.FK_FlightInformation_Ac_MSN" />
         <AssociationConnector Association="EPAGRIFFINModel.FK_FlightInformation_Ac_Type" />
         <AssociationConnector Association="EPAGRIFFINModel.fk_flightinformation_fromairport" />
@@ -568,26 +588,6 @@
         <AssociationConnector Association="EPAGRIFFINModel.fk_fsw_flight" />
         <AssociationConnector Association="EPAGRIFFINModel.fk_mvt_flight" />
         <AssociationConnector Association="EPAGRIFFINModel.off_flight" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.Course" Width="1.5" PointX="13.5" PointY="0.75" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.FlightRoute" Width="1.5" PointX="47.375" PointY="20.875" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.HelperPerson" Width="1.5" PointX="55.375" PointY="72.875" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_ACMODEL" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_ACTYPE" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_CaoType" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSE_COURSE" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSE_COURSERELATED" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_Course_Type" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSEACTYPE_COURSE" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSEEMPLOYEE_COURSE" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSEGROUP_COURSE" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSESTUDYFIELD" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_COURSETYPE_COURSE" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_CRSACTYPE_CRS" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_CRSCATRATE_CRS" />
-        <AssociationConnector Association="EPAGRIFFINModel.FK_PersonCourse_Course" />
-        <AssociationConnector Association="EPAGRIFFINModel.fk_session_course" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFormB" Width="1.5" PointX="55.375" PointY="54.875" />
-        <EntityTypeShape EntityType="EPAGRIFFINModel.ViewFormC" Width="1.5" PointX="74.375" PointY="27.875" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
