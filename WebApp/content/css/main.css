@@ -1628,6 +1628,15 @@ h1 {
     background-color: #00b3b3 !important;
     color: #fff;
 }
+.e-gantt-template-taskbar.newtime, .newtime {
+    background-color: #f7941d !important;
+    color: #fff;
+}
+
+.e-gantt-template-taskbar.preparingoperation, .preparingoperation {
+    background-color: #fabdff !important;
+    color: #000;
+}
 
 .task-footer {
     display: inline-block;

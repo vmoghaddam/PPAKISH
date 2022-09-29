@@ -7149,7 +7149,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         $scope.loadingVisible = true;
         if (!$scope.IsComm) {
             flightService.saveFlight(_flight).then(function (response) { 
-
+                
 
 
 
@@ -7200,7 +7200,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
             else
                 _flight.CheckTime = $scope.interval_checktime ? 1 : 0;
             flightService.saveFlightGroup(_flight).then(function (response) {
-
+ 
 
 
 
@@ -19037,8 +19037,8 @@ dto.ChrCapacity = $scope.mchr.Capacity;
                             $scope.loadingVisible = true;
                             flightService.saveFlightLog(dto).then(function (response) {
                                 
-								 //flightService.sendMVT($scope.logFlight.ID,'demo');
-								 //flightService.sendLDM($scope.logFlight.ID,'demo');
+								 flightService.sendMVT($scope.logFlight.ID,'demo');
+								 flightService.sendLDM($scope.logFlight.ID,'demo');
 								 
 
                                 for (var key of Object.keys(response.flight)) {

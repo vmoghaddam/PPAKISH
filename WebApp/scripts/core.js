@@ -599,6 +599,8 @@ Flight.statusDataSource = [
 
 
     { id: 1, title: 'Scheduled', bgcolor: '#ffd480', color: '#fff', class: 'schedule', selectable: true },
+    { id: 27, title: 'New Time', bgcolor: '#f7941d', color: '#fff', class: 'newtime', selectable: true },
+    { id: 26, title: 'Preparing Operation', bgcolor: '#fabdff', color: '#000', class: 'preparingoperation', selectable: true },
 { id: 5, title: 'Delay', bgcolor: '#ff0000', color: '#fff', class: 'schedule', selectable: true },
     { id: 22, title: 'Boarding', bgcolor: '#ff66ff', color: '#fff', class: 'boarding', selectable: true },
     { id: 20, title: 'Start', bgcolor: '#80ffff', color: '#000', class: 'start', selectable: false },
@@ -642,7 +644,8 @@ Flight.statusDataSource = [
       { id: 10004, title: 'TECH', bgcolor: 'slategray', color: '#fff', class: 'st10004 hatch-aog' },
       { id: 10005, title: 'CHECK', bgcolor: 'slategray', color: '#fff', class: 'st10005 hatch-aog' },
 
-         
+    
+    
 
 
 
