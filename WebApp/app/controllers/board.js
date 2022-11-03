@@ -9129,8 +9129,8 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         entity.JLBLMM = $scope.logFlight.JLBLMM;
         entity.PFLR = $scope.logFlight.PFLR;
 
-        entity.Ready = toStringCustom($scope.logFlight.Ready);
-        entity.Start = toStringCustom($scope.logFlight.Start);
+        entity.Ready = moment($scope.logFlight.Ready).format('YYYY/MM/DD HH:mm');
+        entity.Start = moment($scope.logFlight.Start).format('YYYY/MM/DD HH:mm');
         entity.YClass = $scope.logFlight.YClass;
         entity.CClass = $scope.logFlight.CClass;
         entity.TotalTrafficLoad = $scope.logFlight.TotalTrafficLoad;
@@ -9157,37 +9157,37 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         entity.CargoPIRFound = $scope.logFlight.CargoPIRFound;
         entity.LimitTag = $scope.logFlight.LimitTag;
         entity.RushTag = $scope.logFlight.RushTag;
-        entity.CLCheckIn = toStringCustom($scope.logFlight.CLCheckIn);
-        entity.CLPark = toStringCustom($scope.logFlight.CLPark);
-        entity.CLAddTools = toStringCustom($scope.logFlight.CLAddTools);
-        entity.CLBusReady = toStringCustom($scope.logFlight.CLBusReady);
-        entity.CLPaxOut = toStringCustom($scope.logFlight.CLPaxOut);
-        entity.CLDepoOut = toStringCustom($scope.logFlight.CLDepoOut);
-        entity.CLServicePresence = toStringCustom($scope.logFlight.CLServicePresence);
-        entity.CLCleaningStart = toStringCustom($scope.logFlight.CLCleaningStart);
-        entity.CLTechReady = toStringCustom($scope.logFlight.CLTechReady);
-        entity.CLBagSent = toStringCustom($scope.logFlight.CLBagSent);
-        entity.CLCateringLoad = toStringCustom($scope.logFlight.CLCateringLoad);
-        entity.CLFuelStart = toStringCustom($scope.logFlight.CLFuelStart);
-        entity.CLFuelEnd = toStringCustom($scope.logFlight.CLFuelEnd);
-        entity.CLCleaningEnd = toStringCustom($scope.logFlight.CLCleaningEnd);
-        entity.CLBoardingStart = toStringCustom($scope.logFlight.CLBoardingStart);
-        entity.CLBoardingEnd = toStringCustom($scope.logFlight.CLBoardingEnd);
-        entity.CLLoadSheetStart = toStringCustom($scope.logFlight.CLLoadSheetStart);
-        entity.CLGateClosed = toStringCustom($scope.logFlight.CLGateClosed);
-        entity.CLTrafficCrew = toStringCustom($scope.logFlight.CLTrafficCrew);
-        entity.CLLoadCrew = toStringCustom($scope.logFlight.CLLoadCrew);
-        entity.CLForbiddenObj = toStringCustom($scope.logFlight.CLForbiddenObj);
-        entity.CLLoadSheetSign = toStringCustom($scope.logFlight.CLLoadSheetSign);
-        entity.CLLoadingEnd = toStringCustom($scope.logFlight.CLLoadingEnd);
-        entity.CLDoorClosed = toStringCustom($scope.logFlight.CLDoorClosed);
-        entity.CLEqDC = toStringCustom($scope.logFlight.CLEqDC);
-        entity.CLMotorStart = toStringCustom($scope.logFlight.CLMotorStart);
-        entity.CLMovingStart = toStringCustom($scope.logFlight.CLMovingStart);
-        entity.CLACStart = toStringCustom($scope.logFlight.CLACStart);
-        entity.CLACEnd = toStringCustom($scope.logFlight.CLACEnd);
-        entity.CLGPUStart = toStringCustom($scope.logFlight.CLGPUStart);
-        entity.CLGPUEnd = toStringCustom($scope.logFlight.CLGPUEnd);
+        entity.CLCheckIn = moment($scope.logFlight.CLCheckIn).format('YYYY/MM/DD HH:mm');
+        entity.CLPark = moment($scope.logFlight.CLPark).format('YYYY/MM/DD HH:mm');
+        entity.CLAddTools = moment($scope.logFlight.CLAddTools).format('YYYY/MM/DD HH:mm');
+        entity.CLBusReady = moment($scope.logFlight.CLBusReady).format('YYYY/MM/DD HH:mm');
+        entity.CLPaxOut = moment($scope.logFlight.CLPaxOut).format('YYYY/MM/DD HH:mm');
+        entity.CLDepoOut = moment($scope.logFlight.CLDepoOut).format('YYYY/MM/DD HH:mm');
+        entity.CLServicePresence = moment($scope.logFlight.CLServicePresence).format('YYYY/MM/DD HH:mm');
+        entity.CLCleaningStart = moment($scope.logFlight.CLCleaningStart).format('YYYY/MM/DD HH:mm');
+        entity.CLTechReady = moment($scope.logFlight.CLTechReady).format('YYYY/MM/DD HH:mm');
+        entity.CLBagSent = moment($scope.logFlight.CLBagSent).format('YYYY/MM/DD HH:mm');
+        entity.CLCateringLoad = moment($scope.logFlight.CLCateringLoad).format('YYYY/MM/DD HH:mm');
+        entity.CLFuelStart = moment($scope.logFlight.CLFuelStart).format('YYYY/MM/DD HH:mm');
+        entity.CLFuelEnd = moment($scope.logFlight.CLFuelEnd).format('YYYY/MM/DD HH:mm');
+        entity.CLCleaningEnd = moment($scope.logFlight.CLCleaningEnd).format('YYYY/MM/DD HH:mm');
+        entity.CLBoardingStart = moment($scope.logFlight.CLBoardingStart).format('YYYY/MM/DD HH:mm');
+        entity.CLBoardingEnd = moment($scope.logFlight.CLBoardingEnd).format('YYYY/MM/DD HH:mm');
+        entity.CLLoadSheetStart = moment($scope.logFlight.CLLoadSheetStart).format('YYYY/MM/DD HH:mm');
+        entity.CLGateClosed = moment($scope.logFlight.CLGateClosed).format('YYYY/MM/DD HH:mm');
+        entity.CLTrafficCrew = moment($scope.logFlight.CLTrafficCrew).format('YYYY/MM/DD HH:mm');
+        entity.CLLoadCrew = moment($scope.logFlight.CLLoadCrew).format('YYYY/MM/DD HH:mm');
+        entity.CLForbiddenObj = moment($scope.logFlight.CLForbiddenObj).format('YYYY/MM/DD HH:mm');
+        entity.CLLoadSheetSign = moment($scope.logFlight.CLLoadSheetSign).format('YYYY/MM/DD HH:mm');
+        entity.CLLoadingEnd = moment($scope.logFlight.CLLoadingEnd).format('YYYY/MM/DD HH:mm');
+        entity.CLDoorClosed = moment($scope.logFlight.CLDoorClosed).format('YYYY/MM/DD HH:mm');
+        entity.CLEqDC = moment($scope.logFlight.CLEqDC).format('YYYY/MM/DD HH:mm');
+        entity.CLMotorStart = moment($scope.logFlight.CLMotorStart).format('YYYY/MM/DD HH:mm');
+        entity.CLMovingStart = moment($scope.logFlight.CLMovingStart).format('YYYY/MM/DD HH:mm');
+        entity.CLACStart = moment($scope.logFlight.CLACStart).format('YYYY/MM/DD HH:mm');
+        entity.CLACEnd = moment($scope.logFlight.CLACEnd).format('YYYY/MM/DD HH:mm');
+        entity.CLGPUStart = moment($scope.logFlight.CLGPUStart).format('YYYY/MM/DD HH:mm');
+        entity.CLGPUEnd = moment($scope.logFlight.CLGPUEnd).format('YYYY/MM/DD HH:mm');
         entity.CLDepStairs = $scope.logFlight.CLDepStairs;
         entity.CLDepGPU = $scope.logFlight.CLDepGPU;
         entity.CLDepCrewCar = $scope.logFlight.CLDepCrewCar;
@@ -9271,6 +9271,7 @@ app.controller('boardController', ['$scope', '$location', '$routeParams', '$root
         //        Delay: Math.floor(_d.EstimatedDelay),
         //    });
         //});
+        console.log(entity);
     };
     $scope.fillDeparture = function (entity) {
         entity.ChocksOut = (new Date($scope.flight.ChocksOut)).toUTCString();
@@ -16878,6 +16879,42 @@ dto.ChrCapacity = $scope.mchr.Capacity;
         //  console.log('$scope.modifyFlightTimes=function(flt,utc){');
         //   console.log(flt);
 
+
+        if (flt.Ready) flt.Ready = getOffsetDate(flt.Ready, m, n);
+        if (flt.Start) flt.Start = getOffsetDate(flt.Start, m, n);
+
+        if (flt.CLCheckIn) flt.CLCheckIn = getOffsetDate(flt.CLCheckIn, m, n);
+        if (flt.CLPark) flt.CLPark = getOffsetDate(flt.CLPark, m, n);
+        if (flt.CLAddTools) flt.CLAddTools = getOffsetDate(flt.CLAddTools, m, n);
+        if (flt.CLBusReady) flt.CLBusReady = getOffsetDate(flt.CLBusReady, m, n);
+        if (flt.CLPaxOut) flt.CLPaxOut = getOffsetDate(flt.CLPaxOut, m, n);
+        if (flt.CLDepoOut) flt.CLDepoOut = getOffsetDate(flt.CLDepoOut, m, n);
+        if (flt.CLServicePresence) flt.CLServicePresence = getOffsetDate(flt.CLServicePresence, m, n);
+        if (flt.CLCleaningStart) flt.CLCleaningStart = getOffsetDate(flt.CLCleaningStart, m, n);
+        if (flt.CLTechReady) flt.CLTechReady = getOffsetDate(flt.CLTechReady, m, n);
+        if (flt.CLBagSent) flt.CLBagSent = getOffsetDate(flt.CLBagSent, m, n);
+        if (flt.CLCateringLoad) flt.CLCateringLoad = getOffsetDate(flt.CLCateringLoad, m, n);
+        if (flt.CLFuelStart) flt.CLFuelStart = getOffsetDate(flt.CLFuelStart, m, n);
+        if (flt.CLFuelEnd) flt.CLFuelEnd = getOffsetDate(flt.CLFuelEnd, m, n);
+        if (flt.CLCleaningEnd) flt.CLCleaningEnd = getOffsetDate(flt.CLCleaningEnd, m, n);
+        if (flt.CLBoardingStart) flt.CLBoardingStart = getOffsetDate(flt.CLBoardingStart, m, n);
+        if (flt.CLBoardingEnd) flt.CLBoardingEnd = getOffsetDate(flt.CLBoardingEnd, m, n);
+        if (flt.CLLoadSheetStart) flt.CLLoadSheetStart = getOffsetDate(flt.CLLoadSheetStart, m, n);
+        if (flt.CLGateClosed) flt.CLGateClosed = getOffsetDate(flt.CLGateClosed, m, n);
+        if (flt.CLTrafficCrew) flt.CLTrafficCrew = getOffsetDate(flt.CLTrafficCrew, m, n);
+        if (flt.CLLoadCrew) flt.CLLoadCrew = getOffsetDate(flt.CLLoadCrew, m, n);
+        if (flt.CLForbiddenObj) flt.CLForbiddenObj = getOffsetDate(flt.CLForbiddenObj, m, n);
+        if (flt.CLLoadSheetSign) flt.CLLoadSheetSign = getOffsetDate(flt.CLLoadSheetSign, m, n);
+        if (flt.CLLoadingEnd) flt.CLLoadingEnd = getOffsetDate(flt.CLLoadingEnd, m, n);
+        if (flt.CLDoorClosed) flt.CLDoorClosed = getOffsetDate(flt.CLDoorClosed, m, n);
+        if (flt.CLEqDC) flt.CLEqDC = getOffsetDate(flt.CLEqDC, m, n);
+        if (flt.CLMotorStart) flt.CLMotorStart = getOffsetDate(flt.CLMotorStart, m, n);
+        if (flt.CLMovingStart) flt.CLMovingStart = getOffsetDate(flt.CLMovingStart, m, n);
+        if (flt.CLACStart) flt.CLACStart = getOffsetDate(flt.CLACStart, m, n);
+        if (flt.CLACEnd) flt.CLACEnd = getOffsetDate(flt.CLACEnd, m, n);
+        if (flt.CLGPUStart) flt.CLGPUStart = getOffsetDate(flt.CLGPUStart, m, n);
+        if (flt.CLGPUEnd) flt.CLGPUEnd = getOffsetDate(flt.CLGPUEnd, m, n);
+
     };
     $scope.grounds = [];
     $scope.bindFlights = function (callback) { 
@@ -19037,8 +19074,8 @@ dto.ChrCapacity = $scope.mchr.Capacity;
                             $scope.loadingVisible = true;
                             flightService.saveFlightLog(dto).then(function (response) {
                                 
-								 flightService.sendMVT($scope.logFlight.ID,'demo');
-								 flightService.sendLDM($scope.logFlight.ID,'demo');
+								 //flightService.sendMVT($scope.logFlight.ID,'demo');
+								 //flightService.sendLDM($scope.logFlight.ID,'demo');
 								 
 
                                 for (var key of Object.keys(response.flight)) {
