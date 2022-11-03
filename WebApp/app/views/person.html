@@ -10,6 +10,13 @@
         padding-right: 5px !important;
         padding-left: 5px !important;
     }
+
+    @media(max-width:850px){
+        #grid_guide {
+            display: none;
+        }
+    }
+    
 </style>
 <div class="box person" style="height:100%;display:none;overflow-y:hidden">
 
@@ -302,21 +309,17 @@
         </div>
 
     </div>
-    <div id="grid_guide" style="position:absolute; bottom: 80px; right: 20px; z-index:3; background-color: white; padding: 15px; border-style:solid;
-     border-color: #ccc; border-width:2px;">
+    <div id="grid_guide" style="position:absolute; top: 0; left:300px; z-index:3; ">
+        <!-- background-color: white; padding: 15px; border-style:solid;    border-color: #ccc; border-width:2px; -->
         <div>
-            <table style="border-spacing: 0.5em 1em; border-collapse: separate; " >
+            <table style="border-spacing: 15px 20px; border-collapse: separate; ">
                 <tr>
                     <td width="20px" style="background-color: #ffd633;"></td>
-                    <td>31-60 days to expiry</td>
-                </tr>
-                <tr>
+                    <td style="color:white">31-60 days to expiry</td>
                     <td width="20px" style="background-color: #ffa64d;"></td>
-                    <td>1-30 days to expiry</td>
-                </tr>
-                <tr>
+                    <td style="color:white">1-30 days to expiry</td>
                     <td width="20px" style="background-color: #ff471a;"></td>
-                    <td>Expired</td>
+                    <td style="color:white">Expired</td>
                 </tr>
             </table>
         </div>
